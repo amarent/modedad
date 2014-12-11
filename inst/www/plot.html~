@@ -31,7 +31,7 @@
   </style>
  </head>
 <body>
-    <h1>Ejemplo histograma</h1>
+    <h1>Ejemplo histograma 1</h1>
     <div id="plotdiv"></div>
     <p>
      hola
