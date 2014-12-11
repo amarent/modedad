@@ -26,12 +26,20 @@ var Vn= get['n'];
 var Vrubro= get['variable'];
 var Vmes= get['cve_mes'];
 
+//init this script when the page has loaded
+$(document).ready(function(){
+$("#submitbutton").on("click", function(){
+
+
 var req = $("#plotdiv").rplot("histograma", {
 rubro : Vrubro,
 n : Vn,
 mes : Vmes
-});
+})
 
+
+});
+});
 </script>
 <style>
 #plotdiv {
@@ -44,7 +52,13 @@ border: solid gray 1px;
 </head>
 <body>
 <h1>histograma</h1>
-
+<b>n (count) </b> <input type="number" id="nfield" value="1000">
+<b>distribution type</b> <select id="distfield">
+<option>dsa</option>
+<option>dias_antiguedad</option>
+</select>
+<br />
+<button id="submitbutton" type="button">Submit to server!</button>
 <div id="plotdiv"></div>
 <br />
 <p>hola

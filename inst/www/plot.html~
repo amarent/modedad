@@ -30,7 +30,7 @@ var req = $("#plotdiv").rplot("histograma", {
 rubro : Vrubro,
 n : Vn,
 mes : Vmes
-})
+});
 
 </script>
 <style>
