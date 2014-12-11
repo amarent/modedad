@@ -22,28 +22,16 @@ function getGET(){
 }
 
 var get = getGET();
+var Vn= get['n'];
+var Vrubro= get['variable'];
+var Vmes= get['cve_mes'];
 
-var nfield= get['n'];
-var distfield= get['variable'];
-//init this script when the page has loaded
-$(document).ready(function(){
-$("#submitbutton").on("click", function(){
-//disable the button to prevent multiple clicks
-$("#submitbutton").attr("disabled", "disabled");
-//read the value for 'myname'
-//a = $_GET("miVariable");
-//var nfield = parseInt($("#nfield").val());
-//var distfield = $("#distfield").val();
-//create the plot area on the plotdiv element
 var req = $("#plotdiv").rplot("histograma", {
-rubro : distfield,
-n : nfield,
-mes : 201410
+rubro : Vrubro,
+n : Vn,
+mes : Vmes
 })
 
-
-});
-});
 </script>
 <style>
 #plotdiv {
@@ -56,13 +44,7 @@ border: solid gray 1px;
 </head>
 <body>
 <h1>histograma</h1>
-<b>n (count) </b> <input type="number" id="nfield" value="1000">
-<b>distribution type</b> <select id="distfield">
-<option>dsa</option>
-<option>dias_antiguedad</option>
-</select>
-<br />
-<button id="submitbutton" type="button">Submit to server!</button>
+
 <div id="plotdiv"></div>
 <br />
 <p>hola
