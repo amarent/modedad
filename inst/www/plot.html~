@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>hola</title>
+<title>Telefónica</title>
 <!-- Include order: first jquery, then opencpu.js, and then your code -->
 <script src="opencpu/jquery-1.10.2.min.js"></script>
 <script src="opencpu/opencpu-0.4.js"></script>
@@ -48,8 +48,5 @@ border: solid gray 1px;
 <body>
 <h1>histograma</h1>
 <div id="plotdiv"></div>
-<br />
-<p>hola
-</p>
 </body>
 </html>
