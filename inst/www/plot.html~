@@ -12,7 +12,7 @@
        var mes=$_GET("cve_mes");
 
  
-        var req = $("#plotdiv").rplot("histograma", {
+        var req = $("#plotdiv").r_fun_plot("histograma", {
           rubro : "dsa",
           mes : "201410",
 	  n : "1000"
