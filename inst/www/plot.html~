@@ -7,8 +7,8 @@
 <script src="opencpu/opencpu-0.4.js"></script>
 
 <script>
-var nfield= $_GET("n");
-var distfield= $_GET("variable");
+var nfield= $_GET('n');
+var distfield= $_GET('variable');
 //init this script when the page has loaded
 $(document).ready(function(){
 $("#submitbutton").on("click", function(){
