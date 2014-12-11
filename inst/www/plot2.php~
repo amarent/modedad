@@ -32,10 +32,12 @@
 
         var distfield = $("#distfield").val();
 
+<?php
+        $var nomvariable =$_GET['variable'];
+	$var tam=$_GET['n'];
+	$var mes=$_GET['cve_mes'];
+?>
 
-        var nomvariable =$_GET("variable");
-	var tam=$_GET("n");
-	var mes=$_GET("cve_mes");
         
 //create the plot area on the plotdiv element
 
