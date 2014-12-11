@@ -28,7 +28,7 @@ var Vmes= get['cve_mes'];
 
 //init this script when the page has loaded
 $(document).ready(function(){
-$("#submitbutton").on("click", function(){
+//$("#submitbutton").on("click", function(){
 
 
 var req = $("#plotdiv").rplot("histograma", {
@@ -38,7 +38,7 @@ mes : Vmes
 })
 
 
-});
+//});
 });
 </script>
 <style>
