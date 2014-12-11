@@ -15,7 +15,7 @@
 
         var req = $("#plotdiv").rplot("histograma", {
           rubro : nomvariable,
-          mes : mes
+          mes : mes,
 	  n : tam
         })
 
