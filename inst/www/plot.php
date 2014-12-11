@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<?php include("encabezado.php"); ?>
 <title>Telefónica</title>
 <!-- Include order: first jquery, then opencpu.js, and then your code -->
 <script src="opencpu/jquery-1.10.2.min.js"></script>
