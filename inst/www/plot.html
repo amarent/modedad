@@ -12,8 +12,11 @@ $("#submitbutton").on("click", function(){
 //disable the button to prevent multiple clicks
 $("#submitbutton").attr("disabled", "disabled");
 //read the value for 'myname'
-var nfield = parseInt($("#nfield").val());
-var distfield = $("#distfield").val();
+//a = $_GET("miVariable");
+var nfield= $_GET("n");
+var distfield= $_GET("variable");
+//var nfield = parseInt($("#nfield").val());
+//var distfield = $("#distfield").val();
 //create the plot area on the plotdiv element
 var req = $("#plotdiv").rplot("histograma", {
 rubro : distfield,
