@@ -11,19 +11,14 @@
        var tam=$_GET("n");
        var mes=$_GET("cve_mes");
 
-    function initialize (){
-
+ 
         var req = $("#plotdiv").rplot("histograma", {
           rubro : "dsa",
           mes : "201410",
 	  n : "1000"
         })
 
-        req.fail(function(){
-          alert("Server error: " + req.responseText);
-        });
-    });
-  initialize;
+  
     </script>
 
     <style>
