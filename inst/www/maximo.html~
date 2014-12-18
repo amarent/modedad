@@ -62,6 +62,6 @@ border: solid gray 1px;
 		<br>
 	</td></tr>
 </table>
-<div id="maximodiv"></div>
+<p id="maximodiv"></p>
 </body>
 </html>
