@@ -13,10 +13,5 @@ sd<-sd(x)
 
 promedio<-mean(x)
 
-cat(
-"Maximo:","/n", max,
-"Minimo:", min,
-"Asimetria:", asimetria,
-"Desviacion estandar:", sd,
-"Promedio:", promedio)
+c("Maximo:","/n", max,"Minimo:", min,"Asimetria:", asimetria,"Desviacion estandar:", sd,"Promedio:", promedio)
 }
