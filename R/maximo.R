@@ -13,10 +13,10 @@ sd<-sd(x)
 
 promedio<-mean(x)
 
-return(list(message=cat(
+return(cat(
 "Maximo:","/n", max,
 "Minimo:", min,
 "Asimetria:", asimetria,
 "Desviacion estandar:", sd,
-"Promedio:", promedio)))
+"Promedio:", promedio))
 }
