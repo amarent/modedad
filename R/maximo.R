@@ -14,7 +14,12 @@ sd<-paste("Desviacion estandar:",sd(x))
 promedio<-paste("Promedio:",mean(x))
 plot(-1,1,-1,1,type="n")
 l<-list(max,min,asimetria,sd,promedio)
-plot(-1:1,-1:1,type=n,xlab="",ylab="")
+
+plot(-1:1, -1:1, type = "n", xlab = "Re", ylab = "Im")
+K <- 16; text(exp(1i * 2 * pi * (1:K) / K), col = 2)
+
+
+#plot(-1:1,-1:1,type=n,xlab="",ylab="")
 #text(x=-.8,y=c(-.8,-.4,0,.4,.8),labels=l)
 #list(message=paste("Maximo: \n", max,"Minimo: \n", min,"Asimetria:\n",asimetria,"Desviacion estandar: \n", sd,"Promedio: \n", promedio))
 }
