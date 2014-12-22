@@ -16,7 +16,7 @@ plot(-1,1,-1,1,type="n")
 l<-list(max,min,asimetria,sd,promedio)
 
 plot(-1:1, -1:1, type = "n", xlab = "Re", ylab = "Im")
-K <- 16; text(exp(1i * 2 * pi * (1:K) / K), col = 2)
+
 
 
 #plot(-1:1,-1:1,type=n,xlab="",ylab="")
