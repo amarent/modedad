@@ -15,7 +15,7 @@ maximo=function(rubro,mes,n) {
 
 #l<-list(max,min,asimetria,sd,promedio)
 
-plot(-1:1, -1:1, type = "n", xlab = "", ylab = "")
+plot(-1:1, -1:1, type = "b", xlab = "", ylab = "")
 
 
 

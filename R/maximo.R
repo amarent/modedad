@@ -1,25 +1,25 @@
 maximo=function(rubro,mes,n) {
-#x<-getdata98(rubro,mes,n)
-#x<-x[!is.na(x[,1]),]
+x<-getdata98(rubro,mes,n)
+x<-x[!is.na(x[,1]),]
 
-#max<-paste("Maximo:",max(x))
+max<-paste("Maximo:",max(x))
 
-#min<-paste("Minimo:",min(x))
+min<-paste("Minimo:",min(x))
 
-#m3=mean(((x)-mean(x))^3)
-#asimetria=paste("Asimetria:",m3/(sd(x)^3))
+m3=mean(((x)-mean(x))^3)
+asimetria=paste("Asimetria:",m3/(sd(x)^3))
 
-#sd<-paste("Desviacion estandar:",sd(x))
+sd<-paste("Desviacion estandar:",sd(x))
 
-#promedio<-paste("Promedio:",mean(x))
+promedio<-paste("Promedio:",mean(x))
 
-#l<-list(max,min,asimetria,sd,promedio)
+l<-list(max,min,asimetria,sd,promedio)
 
-plot(-1:1, -1:1, type = "b", xlab = "", ylab = "")
+#plot(-1:1, -1:1, type = "b", xlab = "", ylab = "")
 
 
 
-#plot(-1:1,-1:1,type=n,xlab="",ylab="")
-#text(x=-.8,y=c(-.8,-.4,0,.4,.8),labels=l)
+plot(-1:1,-1:1,type=b,xlab="",ylab="")
+text(x=-.8,y=c(-.8,-.4,0,.4,.8),labels=l)
 #list(message=paste("Maximo: \n", max,"Minimo: \n", min,"Asimetria:\n",asimetria,"Desviacion estandar: \n", sd,"Promedio: \n", promedio))
 }
