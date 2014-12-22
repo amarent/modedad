@@ -1,21 +1,21 @@
 maximo=function(rubro,mes,n) {
-x<-getdata98(rubro,mes,n)
-x<-x[!is.na(x[,1]),]
+#x<-getdata98(rubro,mes,n)
+#x<-x[!is.na(x[,1]),]
 
-max<-paste("Maximo:",max(x))
+#max<-paste("Maximo:",max(x))
 
-min<-paste("Minimo:",min(x))
+#min<-paste("Minimo:",min(x))
 
-m3=mean(((x)-mean(x))^3)
-asimetria=paste("Asimetria:",m3/(sd(x)^3))
+#m3=mean(((x)-mean(x))^3)
+#asimetria=paste("Asimetria:",m3/(sd(x)^3))
 
-sd<-paste("Desviacion estandar:",sd(x))
+#sd<-paste("Desviacion estandar:",sd(x))
 
-promedio<-paste("Promedio:",mean(x))
-plot(-1,1,-1,1,type="n")
-l<-list(max,min,asimetria,sd,promedio)
+#promedio<-paste("Promedio:",mean(x))
 
-plot(-1:1, -1:1, type = "n", xlab = "Re", ylab = "Im")
+#l<-list(max,min,asimetria,sd,promedio)
+
+plot(-1:1, -1:1, type = "n", xlab = "", ylab = "")
 
 
 
