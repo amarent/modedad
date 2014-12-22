@@ -11,7 +11,7 @@ asimetria=paste("Asimetria:",m3/(sd(x)^3))
 
 sd<-paste("Desviacion estandar:",sd(x)
 
-promedio<-paste("Promedio:",mean(x)
+promedio<-paste("Promedio:",mean(x))
 plot(-1,1,-1,1,type="n")
 l<-list(max,min,asimetria,sd,promedio)
 plot(-1:1,-1:1,type=n,xlab="",ylab="")

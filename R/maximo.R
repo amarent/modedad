@@ -9,7 +9,7 @@ min<-paste("Minimo:",min(x))
 m3=mean(((x)-mean(x))^3)
 asimetria=paste("Asimetria:",m3/(sd(x)^3))
 
-sd<-paste("Desviacion estandar:",sd(x)
+sd<-paste("Desviacion estandar:",sd(x))
 
 promedio<-paste("Promedio:",mean(x))
 plot(-1,1,-1,1,type="n")
