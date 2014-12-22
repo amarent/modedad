@@ -15,6 +15,6 @@ promedio<-paste("Promedio:",mean(x))
 plot(-1,1,-1,1,type="n")
 l<-list(max,min,asimetria,sd,promedio)
 plot(-1:1,-1:1,type=n,xlab="",ylab="")
-text(x=-.8,y=c(-.8,-.4,0,.4,.8),labels=l)
+#text(x=-.8,y=c(-.8,-.4,0,.4,.8),labels=l)
 #list(message=paste("Maximo: \n", max,"Minimo: \n", min,"Asimetria:\n",asimetria,"Desviacion estandar: \n", sd,"Promedio: \n", promedio))
 }
