@@ -13,5 +13,5 @@ sd<-sd(x)
 
 promedio<-mean(x)
 
-list(message=paste("Maximo: \n", max,"Minimo: \n", min,"Asimetria: \n",asimetria,"Desviacion estandar: \n", sd,"Promedio: \n", promedio))
+cat(message=list(c("Maximo: \n", max),c("Minimo: \n", min),c("Asimetria: \n",asimetria),c("Desviacion estandar: \n", sd),c("Promedio: \n", promedio)))
 }
