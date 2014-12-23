@@ -22,7 +22,7 @@ l<-list(max,min,asimetria,sd,promedio,kurtosis)
 
 plot(-1:1,-1:1,type="n",xlab="",ylab="",bty="n",xaxt='n',yaxt='n')
 par(new=T)
-text(x=-1,y=c(-.7,-.3,0,.3,.7 .9),labels=l,adj=0)
+text(x=-1,y=c(-.7,-.3,0,.3,.7,.9),labels=l,adj=0)
 par(new=T)
 plot(-1:1,-1:1,type="n",xlab="",ylab="",bty="n",xaxt='n',yaxt='n')
 #list(message=paste("Maximo: \n", max,"Minimo: \n", min,"Asimetria:\n",asimetria,"Desviacion estandar: \n", sd,"Promedio: \n", promedio))
