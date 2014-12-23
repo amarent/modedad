@@ -9,5 +9,5 @@ histograma <- function(rubro, mes, n)
 h<-hist(mydata,plot=F)
 h$density<-with(h,100*density*diff(breaks)[1])
 labs<-paste(round(h$density),"%",sep="")
-plot(h,freq=F,labels=labs,ylim=c(0,1.08*max(h$density)),xlab=colnames(mydata),ylab="Frecuencia",breaks=19,col="green",border="red",main=paste("Histograma de ",colnames(mydata)))
+plot(h,freq=F,labels=labs,ylim=c(0,1.08*max(h$density)),xlab=colnames(mydata),ylab="Frecuencia",col="green",border="red",main=paste("Histograma de ",colnames(mydata)))
 }
