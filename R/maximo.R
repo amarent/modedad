@@ -4,16 +4,16 @@ x<-x[!is.na(x[,1]),]
 
 #x<-c(2,4,7,9,4,2,6,8,4,2,42,64,8,23,12)
 
-max<-paste("Maximo:",round(max(x)))
+max<-paste("Maximo:",round(max(x),2))
 
-min<-paste("Minimo:",round(min(x)))
+min<-paste("Minimo:",round(min(x),2))
 
 m3=mean(((x)-mean(x))^3)
-asimetria=paste("Asimetria:",round(m3/(sd(x)^3)))
+asimetria=paste("Asimetria:",round(m3/(sd(x)^3),2))
 
-sd<-paste("Desviacion estandar:",round(sd(x)))
+sd<-paste("Desviacion estandar:",round(sd(x),2))
 
-promedio<-paste("Promedio:",round(mean(x)))
+promedio<-paste("Promedio:",round(mean(x),2))
 
 l<-list(max,min,asimetria,sd,promedio)
 
