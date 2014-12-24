@@ -7,6 +7,5 @@ h<-hist(mydata,plot=F,bg="yellow")
 h$density<-with(h,100*density*diff(breaks)[1])
 labs<-paste(round(h$density),"%",sep="")
 par(bg="blue")
-plot(mfrow=c(1,2))
 plot(h,freq=F,labels=labs,ylim=c(0,1.08*max(h$density)),xlab=colnames(mydata),ylab="Frecuencias",col="#8DC63F",border="#51C6D9",main=paste("Histograma de ",colnames(mydata)))
 }
