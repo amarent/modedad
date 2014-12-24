@@ -11,7 +11,7 @@ asimetria=paste("Asimetria:",round(m3/(sd(x)^3),2))
 sd<-paste("Desviacion estandar:",round(sd(x),2))
 promedio<-paste("Promedio:",round(mean(x),2))
 m4=mean((x-mean(x))^4) 
-kurtosis=m4/(sd(x)^4)-3  
+kurtosis=paste("Kurtosis:",m4/(sd(x)^4)-3)
 
 l<-list(max,min,asimetria,sd,promedio,kurtosis)
 
