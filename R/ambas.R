@@ -1,6 +1,6 @@
 ambas=function(rubro,mes,n) {
 #attach(mtcars)
-mydata<-getdata98(rubro,mes,n)
+mydata<-getdata98("dsr","201410",10)
 x<-mydata[!is.na(mydata[,1]),]
 par(mfrow=c(1,2))
 
@@ -15,7 +15,7 @@ kurtosis=paste("Kurtosis:",round(m4/(sd(x)^4)-3),2)
 
 l<-list(max,min,asimetria,sd,promedio,kurtosis)
 
-h<-hist(mydata[1,],plot=F,bg="yellow")
+h<-hist(mydata[1,],plot=F)
 h$density<-with(h,100*density*diff(breaks)[1])
 labs<-paste(round(h$density),"%",sep="")
 
