@@ -1,4 +1,4 @@
-maximo=function(rubro,mes,n) {
+ambas=function(rubro,mes,n) {
 #attach(mtcars)
 mydata<-getdata98(rubro,mes,n)
 x<-mydata[!is.na(mydata[,1]),]
