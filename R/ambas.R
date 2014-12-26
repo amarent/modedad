@@ -1,8 +1,6 @@
-ambas=function(rubro,mes,n) {
-#attach(mtcars)
-mydata<-getdata98("dsr","201410",10)
+ambas<-function(rubro,mes,n) {
+mydata<-getdata98("minutos_totales","201410","70")
 x<-mydata[!is.na(mydata[,1]),]
-par(mfrow=c(1,2))
 
 max<-paste("Maximo:",round(max(x),2))
 min<-paste("Minimo:",round(min(x),2))
@@ -15,14 +13,16 @@ kurtosis=paste("Kurtosis:",round(m4/(sd(x)^4)-3),2)
 
 l<-list(max,min,asimetria,sd,promedio,kurtosis)
 
-h<-hist(mydata[1,],plot=F)
+h<-hist(mydata[,1],plot=F)
 h$density<-with(h,100*density*diff(breaks)[1])
 labs<-paste(round(h$density),"%",sep="")
 
-par(bg="white")
-plot(h,freq=F,labels=labs,ylim=c(0,1.08*max(h$density)),xlab=colnames(mydata),ylab="Frecuencias",col="#51C6D9",border="#00517A",main=paste("Histograma de ",colnames(mydata)))
+par(mfrow=c(1,2))
 
 plot(-1:1,-1:1,type="n",xlab="",ylab="",bty="n",xaxt='n',yaxt='n')
 par(new=T)
 text(x=-1,y=c(-.9,-.6,-.3,0,.3,.6),labels=l,adj=0)
+
+par(bg="white")
+plot(h,freq=F,labels=labs,ylim=c(0,1.08*max(h$density)),xlab=colnames(mydata),ylab="Frecuencias",col="#51C6D9",border="#00517A",main=paste("Histograma de ",colnames(mydata)))
 }
