@@ -15,7 +15,7 @@ kurtosis=paste("Kurtosis:",round(m4/(sd(x)^4)-3),2)
 
 l<-list(max,min,asimetria,sd,promedio,kurtosis)
 
-h<-hist(mydata[,1],plot=F,bg="yellow")
+h<-hist(mydata[1,],plot=F,bg="yellow")
 h$density<-with(h,100*density*diff(breaks)[1])
 labs<-paste(round(h$density),"%",sep="")
 
