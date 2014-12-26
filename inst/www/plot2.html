@@ -4,8 +4,6 @@
 <title>Telefónica</title>
 <!-- Include order: first jquery, then opencpu.js, and then your code -->
 
-
-
 <script src="opencpu/jquery-1.10.2.min.js"></script>
 <script src="opencpu/opencpu-0.4.js"></script>
 
@@ -32,7 +30,7 @@ var Vmes= get['cve_mes'];
 //init this script when the page has loaded
 $(document).ready(function(){
 
-var req = $("#plotdiv").rplot("maximo", {
+var req = $("#plotdiv").rplot("ambas", {
 rubro : Vrubro,
 n : Vn,
 mes : Vmes
@@ -49,7 +47,6 @@ border: solid gray 1px;
 </style>
 </head>
 <body>
-
 
 <table>
 	<tr><td><img src="TELEFONICA.png" style="width:150px;height:50px"></td><td align="center" width=350px> 
