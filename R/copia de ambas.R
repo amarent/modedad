@@ -1,5 +1,5 @@
-ambas<-function(rubro,mes,n) {
-mydata<-getdata98("rubro","mes","n")
+ambas2<-function(rubro,mes,n) {
+mydata<-getdata98("minutos_totales","201410","70")
 x<-mydata[!is.na(mydata[,1]),]
 
 max<-paste("Maximo:",round(max(x),2))
