@@ -1,5 +1,5 @@
 ambas<-function(rubro,mes,n) {
-mydata<-getdata98("rubro","mes","n")
+mydata<-getdata98("dsr","201410","100")
 x<-mydata[!is.na(mydata[,1]),]
 
 max<-paste("Maximo:",round(max(x),2))
