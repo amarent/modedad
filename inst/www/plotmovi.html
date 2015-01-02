@@ -23,17 +23,17 @@ function getGET(){
 }
 
 var get = getGET();
-var Vapariciones= get['apariciones'];
-var Vfecha1= get['fecha1'];
-var Vfecha2= get['fecha2'];
+var Vk= get['apariciones'];
+var Vx= get['fecha1'];
+var Vy= get['fecha2'];
 
 //init this script when the page has loaded
 $(document).ready(function(){
 
 var req = $("#plotdiv").rplot("nuage_mov", {
-k : Vapariciones,
-x : Vfecha1,
-y : Vfecha2
+k : Vk,
+x : Vx,
+y : Vy
 })
 });
 </script>
