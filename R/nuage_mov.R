@@ -7,6 +7,7 @@ nuage_mov<-function(k,x,y){
 	library(RColorBrewer)
 	mongo <- mongo.create()
 	DBNS <- "twitter.jr_mov"
+k<-as.numeric(k)
 
 	query <- mongo.bson.buffer.create()
 	mongo.bson.buffer.start.object(query, 'created_at')
