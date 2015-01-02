@@ -1,11 +1,11 @@
-hist_mov<-function(x="2014-12-12",y="2014-12-25",k=20){
+hist_mov<-function(k,x,y){
 	
 	library(tm)
 	library(rmongodb) 
 	library(plyr)
 	mongo <- mongo.create()
 	DBNS <- "twitter.jr_mov"
-
+k<-as.numeric(k)
 	query <- mongo.bson.buffer.create()
 	mongo.bson.buffer.start.object(query, 'created_at')
 	mongo.bson.buffer.append.time(query, "$lte", strptime(y,"%Y-%m-%d"))
