@@ -23,9 +23,9 @@ function getGET(){
 }
 
 var get = getGET();
-var Vn= get['n'];
-var Vrubro= get['variable'];
-var Vmes= get['cve_mes'];
+var Vapariciones= get['apariciones'];
+var Vfecha1= get['fecha1'];
+var Vfecha2= get['fecha2'];
 
 //init this script when the page has loaded
 $(document).ready(function(){

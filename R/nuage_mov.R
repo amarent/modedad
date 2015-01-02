@@ -1,4 +1,4 @@
-nuage_mov<-function(x="2014-12-12",y="2014-12-25",k=5){	
+nuage_mov<-function(k,x,y){	
 
 	library(tm)
 	library(rmongodb) 
