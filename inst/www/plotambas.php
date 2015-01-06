@@ -61,22 +61,6 @@ border: solid gray 1px;
 	</td></tr>
 </table>
 <div id="plotdiv"></div>
-<div>
-	<?php
-		$conn = sqlsrv_connect( "10.225.240.98", array( "Database"=>"RADIOBASE", "UID"=>"usrAppWEB", "PWD"=>"Telefonica*01"));
-		$CADSQL ="SELECT ID_ESTADO,ESTADO FROM dbo.JIC_SIGEOTEM_CAT_ESTADO ORDER BY ESTADO";
-		$result = sqlsrv_query($conn ,$CADSQL);
-		while( $row = sqlsrv_fetch_array( $result, SQLSRV_FETCH_ASSOC) )
-		{
-			if($_POST['estado']==$row[ID_ESTADO])
-			{
-			echo "<option value='".$row[ID_ESTADO]."' selected>&nbsp;&nbsp;".$row[ESTADO]."</option>";
-			}else{
-		        echo "<option value='".$row[ID_ESTADO]."'>&nbsp;&nbsp;".$row[ESTADO]."</option>";
-        	        }
-		}
-		sqlsrv_close();
-	?>
-</div>
+
 </body>
 </html>
