@@ -61,7 +61,7 @@ border: solid gray 1px;
 	</td></tr>
 </table>
 <div id="plotdiv"></div>
-<div>
+
 	<?php
 		$conn = sqlsrv_connect( "10.225.240.98", array( "Database"=>"RADIOBASE", "UID"=>"usrAppWEB", "PWD"=>"Telefonica*01"));
 		$CADSQL ="SELECT ID_ESTADO,ESTADO FROM dbo.JIC_SIGEOTEM_CAT_ESTADO ORDER BY ESTADO";
@@ -77,6 +77,13 @@ border: solid gray 1px;
 		}
 		sqlsrv_close();
 	?>
-<div>
+
+
+
+
+
+
+
+
 </body>
 </html>
