@@ -34,7 +34,7 @@ k<-as.numeric(k)
 	mach_corpus <- Corpus(VectorSource(gids))
 	tdm <- TermDocumentMatrix(mach_corpus,
    	control = list(removePunctuation = TRUE,
-   	stopwords = c("movistar", "movistarmx","mimovistarmx", stopwords("es")),
+   	stopwords = c("movistar", "movistarmx","mimovistarmx","problemas","problema", stopwords("es")),
    	removeNumbers = TRUE, tolower = TRUE))
 	m <- as.matrix(tdm)
 	word_freqs <- sort(rowSums(m), decreasing=TRUE) 
