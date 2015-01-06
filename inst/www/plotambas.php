@@ -77,6 +77,6 @@ border: solid gray 1px;
 		}
 		sqlsrv_close();
 	?>
-<div>
+</div>
 </body>
 </html>
