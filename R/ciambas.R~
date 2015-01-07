@@ -1,7 +1,10 @@
 ciambas<-function(rubro,mes,n) {
-mydata<-getdata98(rubro,mes,n)
-x<-mydata[!is.na(mydata[,1]),]
 
+rubro<-("maxrec")
+
+mydata<-getdata98(rubro,201410,100)
+x<-mydata[!is.na(mydata[,1]),]
+mydataD<-getdata98Var(rubro)
 max<-paste("Maximo:",round(max(x),2))
 min<-paste("Minimo:",round(min(x),2))
 m3=mean(((x)-mean(x))^3)
@@ -17,12 +20,38 @@ h<-hist(mydata[,1],plot=F)
 h$density<-with(h,100*density*diff(breaks)[1])
 labs<-paste(round(h$density),"%",sep="")
 
-par(mfrow=c(1,2))
+
+clean<- function(some_txt)
+{
+some_txt = gsub("\xed", "í", some_txt)
+some_txt = gsub("\xe1", "á", some_txt)
+some_txt = gsub("\xfa", "ú", some_txt)
+some_txt = gsub("Ã¡", "á", some_txt)
+some_txt = gsub("Ãº", "ú", some_txt)
+some_txt = gsub("Ã©", "é", some_txt)
+}
+desc<-clean(as.character(mydataD$DESCRIPCION))
+
+l2<-list(desc)
+layout(matrix(c(1,1,2,3),2,2,byrow=T))
+plot(-1:1,-1:1,type="n",xlab="",ylab="",bty="n",xaxt='n',yaxt='n')
+plot(h,freq=F,labels=labs,ylim=c(0,1.08*max(h$density)),xlab=desc,ylab="Frecuencias",col="#51C6D9",border="#00517A",main=paste("Histograma de ",colnames(mydata)))
+plot(-1:1,-1:1,type="n",xlab="",ylab="",bty="n",xaxt='n',yaxt='n')
+text(x=-1,y=c(-.5),labels=l2,adj=0)
+
+par(mfrow=c(2,2))
+
+
 
 plot(-1:1,-1:1,type="n",xlab="",ylab="",bty="n",xaxt='n',yaxt='n')
 par(new=T)
-text(x=-1,y=c(-.9,-.6,-.3,0,.3,.6),labels=l,adj=0)
+text(x=-1,y=c(.8,.6,.4,.2,0,2),labels=l,adj=0)
 
 par(bg="white")
-plot(h,freq=F,labels=labs,ylim=c(0,1.08*max(h$density)),xlab=colnames(mydata),ylab="Frecuencias",col="#51C6D9",border="#00517A",main=paste("Histograma de ",colnames(mydata)))
+plot(h,freq=F,labels=labs,ylim=c(0,1.08*max(h$density)),xlab=desc,ylab="Frecuencias",col="#51C6D9",border="#00517A",main=paste("Histograma de ",colnames(mydata)))
+
+
+l2<-list(desc)
+plot(-1:1,-1:1,type="n",xlab="",ylab="",bty="n",xaxt='n',yaxt='n')
+text(x=-1,y=c(-.5),labels=l2,adj=0)
 }
