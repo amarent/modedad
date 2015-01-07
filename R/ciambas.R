@@ -1,8 +1,6 @@
 ciambas<-function(rubro,mes,n) {
 
-rubro<-("maxrec")
-
-mydata<-getdata98(rubro,201410,100)
+mydata<-getdata98(rubro,mes,n)
 x<-mydata[!is.na(mydata[,1]),]
 mydataD<-getdata98Var(rubro)
 max<-paste("Maximo:",round(max(x),2))
