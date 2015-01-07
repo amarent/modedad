@@ -61,18 +61,5 @@ border: solid gray 1px;
 	</td></tr>
 </table>
 <div id="plotdiv"></div>
-<div>
-	<?php
-                $varVariable=$_GET['variable']
-		$conn = sqlsrv_connect( "10.225.240.98", array( "Database"=>"RADIOBASE", "UID"=>"usrAppWEB", "PWD"=>"Telefonica*01"));
-		$CADSQL ="SELECT VARIABLE_DESC,DESCRIPCION,PERIODICIDAD FROM KPIS_DETALLE WHERE VARIABLE_BD=".$varVariable;
-		$result = sqlsrv_query($conn ,$CADSQL);
-		while( $row = sqlsrv_fetch_array( $result, SQLSRV_FETCH_ASSOC) )
-		{
-                      echo $row["VARIABLE_DESC"];
-		}
-		sqlsrv_close();
-	?>
-</div>
 </body>
 </html>
