@@ -44,7 +44,7 @@ nuage_hist_mov<-function(k,x,y){
 	word_freqs <- sort(rowSums(m), decreasing=TRUE) 
 	dm <- data.frame(word=names(word_freqs), freq=word_freqs)
 	
-        par(mfrow=c(2,2))
+        par(mfrow=c(1,2))
 
 	wordcloud(dm$word, dm$freq, min.freq=k, random.order=FALSE, colors=brewer.pal(8, "Dark2"))
 	
