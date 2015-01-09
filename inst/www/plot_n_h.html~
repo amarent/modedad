@@ -30,7 +30,7 @@ var Vy= get['fecha2'];
 //init this script when the page has loaded
 $(document).ready(function(){
 
-var req = $("#plotdiv").rplot("nuage_mov", {
+var req = $("#plotdiv").rplot("nuage_hist_mov", {
 k : Vk,
 x : Vx,
 y : Vy
