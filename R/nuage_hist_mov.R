@@ -47,8 +47,7 @@ nuage_hist_mov<-function(k,x,y){
         par(mfrow=c(1,2))
 
 #	wordcloud(dm$word, dm$freq, min.freq=k, random.order=FALSE, colors=brewer.pal(8, "Dark2"))
-	wordcloud(dm$word[1:k,], dm$freq[1:k,],random.order=FALSE, colors=brewer.pal(8, "Dark2"))
-	
+	wordcloud(dm$word, dm$freq,max.words=k,random.order=FALSE, colors=brewer.pal(8, "Dark2"))
 	head(dm,k)
 	par(las=2)
 	par(mar=c(5,8,4,2))
