@@ -38,7 +38,7 @@ nuage_hist_mov<-function(k,x,y){
 	mach_corpus <- Corpus(VectorSource(gids))
 	tdm <- TermDocumentMatrix(mach_corpus,
    	control = list(removePunctuation = TRUE,
-   	stopwords = c("movistar", "movistarmx","mimovistarmx","problemas","problema", stopwords("es")),
+   	stopwords = c("movistar", "movistarmx","mimovistarmx","problemas","problema","hola","gracias", stopwords("es")),
    	removeNumbers = TRUE, tolower = TRUE))
 	m <- as.matrix(tdm)
 	word_freqs <- sort(rowSums(m), decreasing=TRUE) 
@@ -51,5 +51,5 @@ nuage_hist_mov<-function(k,x,y){
 	head(dm,k)
 	par(las=2)
 	par(mar=c(5,8,4,2))
-	barplot(dm[1:20,2],horiz=TRUE,names.arg=dm[1:20,1],col="darkblue")
+	barplot(dm[1:17,2],horiz=TRUE,names.arg=dm[1:17,1],col="darkblue")
 }
