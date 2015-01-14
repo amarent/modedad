@@ -51,5 +51,5 @@ nuage_hist_mov<-function(k,x,y){
 	head(dm,k)
 	par(las=2)
 	par(mar=c(5,8,4,2))
-	barplot(dm[1:k,2],horiz=TRUE,names.arg=dm[1:k,1],col="darkblue")
+	barplot(dm[1:k,2],horiz=TRUE,names.arg=dm[1:20,1],col="darkblue")
 }
