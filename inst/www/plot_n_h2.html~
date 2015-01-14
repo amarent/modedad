@@ -38,7 +38,7 @@ y : Vy
 <style>
 #plotdiv {
 position: relative;
-width: 100%;
+width: 800px;
 height: 500px;
 border: solid gray 1px;
 }
