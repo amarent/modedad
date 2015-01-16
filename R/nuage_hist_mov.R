@@ -5,11 +5,11 @@ nuage_hist_mov<-function(k,x,y){
 	library(plyr)
 	library(wordcloud)
 	library(RColorBrewer)
-
+k<-100
 k<-as.numeric(k)
 args <- list(
-fecha1 = c("2014-12-05"),
-fecha2 = c("2014-12-25")
+fecha1 = x,
+fecha2 = y
 #base_datos=bd
 );
 myurl <- paste("http://10.225.190.192/atweets/test.php?",paste(names(args), args, sep="=", collapse="&"), sep="");

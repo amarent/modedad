@@ -8,8 +8,8 @@ nuage_hist_mov<-function(k,x,y){
 
 k<-as.numeric(k)
 args <- list(
-fecha1 = c(x),
-fecha2 = c(y)
+fecha1 = c("2014-12-05"),
+fecha2 = c("2014-12-25")
 #base_datos=bd
 );
 myurl <- paste("http://10.225.190.192/atweets/test.php?",paste(names(args), args, sep="=", collapse="&"), sep="");
