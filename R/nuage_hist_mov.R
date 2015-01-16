@@ -1,41 +1,28 @@
 nuage_hist_mov<-function(k,x,y){	
 
-	library(tm)
+
+library(tm)
 	library(rmongodb) 
 	library(plyr)
 	library(wordcloud)
 	library(RColorBrewer)
-	
-	mongo <- mongo.create()
-	DBNS <- "twitter.jr_mov"
-	
-	k<-as.numeric(k)
-	
-	query <- mongo.bson.buffer.create()
-	mongo.bson.buffer.start.object(query, 'created_at')
-	mongo.bson.buffer.append.time(query, "$lte", strptime(y,"%Y-%m-%d"))
-	mongo.bson.buffer.finish.object(query)
-	mongo.bson.buffer.start.object(query, 'created_at')
-	mongo.bson.buffer.append.time(query, "$gte", strptime(x,"%Y-%m-%d"))
-	mongo.bson.buffer.finish.object(query)
-	query <-mongo.bson.from.buffer(query)
 
-	fields <-mongo.bson.buffer.create()
-	mongo.bson.buffer.append(fields, "text", 1L)
-	mongo.bson.buffer.append(fields, "_id", 0L)
-	fields <- mongo.bson.from.buffer(fields)
 
-	twts <- mongo.find(mongo, ns = DBNS, query = query,
-	fields = fields, limit = 10000L)
-	
-	gids <- data.frame(stringsAsFactors = FALSE)
-	while (mongo.cursor.next(twts)) {
-		tmp <- mongo.bson.to.list(mongo.cursor.value(twts))
-		tmp.df <- as.data.frame(t(unlist(tmp)), stringsAsFactors = F)
-		gids <- rbind.fill(gids, tmp.df)
-		}
-		
-	mach_corpus <- Corpus(VectorSource(gids))
+args <- list(
+n = n,
+variable = rubro,
+cve_mes = mes
+);
+myurl <- paste("http://10.225.190.192/atweets/test.php?",paste(names(args), args, sep="=", collapse="&"), sep="");
+    
+mydata <- tryCatch(read.table(myurl,sep="\t",quote="\""), error=function(e){
+              stop("Fallo !!")
+});
+
+mydata<-as.data.frame(mydata[,1])
+colnames(mydata)<-c("text")
+
+	mach_corpus <- Corpus(VectorSource(as.vector(mydata)))
 	tdm <- TermDocumentMatrix(mach_corpus,
    	control = list(removePunctuation = TRUE,
    	stopwords = c("movistar", "movistarmx","mimovistarmx","problemas","problema","hola","gracias", stopwords("es")),
@@ -46,7 +33,6 @@ nuage_hist_mov<-function(k,x,y){
 	
         par(mfrow=c(1,2))
 
-#	wordcloud(dm$word, dm$freq, min.freq=k, random.order=FALSE, colors=brewer.pal(8, "Dark2"))
 	wordcloud(dm$word, dm$freq,max.words=k,random.order=FALSE, colors=brewer.pal(8, "Dark2"))
 	head(dm,k)
 	par(las=2)
