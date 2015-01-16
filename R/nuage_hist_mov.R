@@ -1,4 +1,4 @@
-nuage_hist_mov<-function(k,x,y){	
+nuage_hist_mov<-function(k,x,y,bd){	
 
 	library(tm)
 	library(rmongodb) 
@@ -9,8 +9,8 @@ k<-100
 k<-as.numeric(k)
 args <- list(
 fecha1 = x,
-fecha2 = y
-#base_datos=bd
+fecha2 = y,
+base_datos= bd
 );
 myurl <- paste("http://10.225.190.192/atweets/test.php?",paste(names(args), args, sep="=", collapse="&"), sep="");
     

@@ -22,6 +22,7 @@ function getGET(){
 }
 
 var get = getGET();
+var Vc= get['companhia'];
 var Vk= get['apariciones'];
 var Vx= get['fecha1'];
 var Vy= get['fecha2'];
@@ -32,6 +33,7 @@ var req = $("#plotdiv").rplot("nuage_hist_mov", {
 k : Vk,
 x : Vx,
 y : Vy
+bd : Vc
 })
 });
 </script>
