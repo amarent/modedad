@@ -8,7 +8,6 @@ nuage_hist_mov<-function(k,x,y){
 
 k<-as.numeric(k)
 args <- list(
-apariciones = k,
 fecha1 = x,
 fecha2 = y
 #base_datos=bd
