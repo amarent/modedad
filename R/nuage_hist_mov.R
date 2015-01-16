@@ -10,11 +10,10 @@ nuage_hist_mov<-function(k,x,y){
 args <- list(
 n = n,
 variable = rubro,
-cve_mes = mes,
+cve_mes = mes
 #base_datos=bd
 );
-myurl <- paste("http://10.225.190.192/atweets/test.php?")
-#,paste(names(args), args, sep="=", collapse="&"), sep="");
+myurl <- paste("http://10.225.190.192/atweets/test.php?",paste(names(args), args, sep="=", collapse="&"), sep="");
     
 mydata <- tryCatch(read.table(myurl,sep="\t",quote="\""), error=function(e){
               stop("Fallo !!")
