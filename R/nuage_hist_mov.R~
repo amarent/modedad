@@ -1,4 +1,4 @@
-nuage_hist_mov<-function(k,x,y,bd){	
+nuage_hist_mov<-function(k,x,y){	
 
 	library(tm)
 	library(rmongodb) 
