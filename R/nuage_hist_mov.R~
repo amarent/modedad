@@ -11,7 +11,7 @@ args <- list(
 n = n,
 variable = rubro,
 cve_mes = mes,
-base_datos=bd
+#base_datos=bd
 );
 myurl <- paste("http://10.225.190.192/atweets/test.php?",paste(names(args), args, sep="=", collapse="&"), sep="");
     
