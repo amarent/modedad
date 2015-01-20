@@ -1,4 +1,4 @@
-rs_hostograma2<-function(x="2014-12-12",y="2014-12-25",k=20){
+rs_histograma2<-function(x="2014-12-12",y="2014-12-25",k=20){
 	
 	library(tm)
 	library(rmongodb) 
