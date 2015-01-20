@@ -1,4 +1,4 @@
-rs_nube<-function(k,x,y,bd){	
+rs_histograma<-function(k,x,y,bd){	
 
 	library(tm)
 	library(rmongodb) 
