@@ -1,4 +1,4 @@
-nuage_hist_mov<-function(k,x,y,bd){	
+rs_nube<-function(k,x,y,bd){	
 
 	library(tm)
 	library(rmongodb) 
@@ -12,7 +12,7 @@ fecha1 = x,
 fecha2 = y,
 companhia= bd
 );
-myurl <- paste("http://10.225.190.192/atweets/test.php?",paste(names(args), args, sep="=", collapse="&"), sep="");
+myurl <- paste("http://10.225.190.212/atweets/test.php?",paste(names(args), args, sep="=", collapse="&"), sep="");
     
 mydata <- tryCatch(read.table(myurl,sep="\t",quote="\""), error=function(e){
               stop("Fallo !!")
