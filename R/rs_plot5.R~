@@ -3,7 +3,7 @@ rs_plot5<-function(x="2014-12-12",y="2014-12-25",k=20 ){
 	library(tm)
 	library(rmongodb) 
 	library(fpc)
-	library(plyr)	
+	
 	
 	mongo <- mongo.create()
 	DBNS <- "twitter.jr_mov"
@@ -48,7 +48,43 @@ rs_plot5<-function(x="2014-12-12",y="2014-12-25",k=20 ){
 	m3 <- t(termDocMatrix)
 	pamResult <- pamk(m3, metric="manhattan")
 	pamResult <- pamResult$pamobject
-	layout(matrix(c(1,2),2,1))
+#	layout(matrix(c(1,2),2,1))
 
 	return(plot(pamResult, color=F, labels=4, lines=0, cex=.8, col.clus=1,col.p=pamResult$clustering))
 	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
