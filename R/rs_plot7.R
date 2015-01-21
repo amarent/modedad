@@ -1,10 +1,9 @@
-rs_plot5<-function(x="2014-12-12",y="2014-12-25",k=20 ){
-#rs_kmediod_mov	
+rs_plot7<-function(x="2014-12-12",y="2014-12-25",k=1000){
+#vertdist_mo	
 	library(tm)
 	library(rmongodb) 
-	library(fpc)
-	
-	
+	library(plyr)
+	library(igraph)
 	mongo <- mongo.create()
 	DBNS <- "twitter.jr_mov"
 
@@ -45,12 +44,22 @@ rs_plot5<-function(x="2014-12-12",y="2014-12-25",k=20 ){
 	word_freqs <- sort(rowSums(m), decreasing=TRUE) 
 	dm <- data.frame(word=names(word_freqs), freq=word_freqs)
 	termDocMatrix<-m[dm[1:k,1],]
-	m3 <- t(termDocMatrix)
-	pamResult <- pamk(m3, metric="manhattan")
-	pamResult <- pamResult$pamobject
-#	layout(matrix(c(1,2),2,1))
+	termDocMatrix<-termDocMatrix[,colSums(termDocMatrix)>0]	
+	termDocMatrix[termDocMatrix>=1] <- 1
+	termMatrix <- termDocMatrix %*% t(termDocMatrix)
+	g <- graph.adjacency(termMatrix, weighted=T, mode="undirected")
+	g <- simplify(g)
+	V(g)$label <- V(g)$name
+	V(g)$degree <- degree(g)
+	V(g)$label.cex <- 1
+	V(g)$label.color <- rgb(.4, 0, 0, .7)
+	V(g)$size <- 2
+	V(g)$frame.color <- NA
+	barplot(table(V(g)$degree))
 
-	return(plot(pamResult, color=F, labels=4, lines=0, cex=.8, col.clus=1,col.p=pamResult$clustering))
+	
+
+	return(plot(g, layout=layout1))
 	}
 
 
