@@ -1,4 +1,4 @@
-rs_histograma5<-function(x="2014-12-12",y="2014-12-25",k=.95){
+rs_histograma5<-function(x,y,k){
 	
 	library(tm)
 	library(rmongodb) 

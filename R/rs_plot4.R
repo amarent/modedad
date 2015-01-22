@@ -50,16 +50,15 @@ rs_plot4<-function(x="2014-12-12",y="2014-12-25",k=20,n=8 ){
 	set.seed(122)
 	kmeansResult <- kmeans(m3, n)
 	round(kmeansResult$centers, digits=3)
-	for (i in 1:n) {
-	cat(paste("cluster ", i, ": ", sep=""))
-	s <- sort(kmeansResult$centers[i,], decreasing=T)
-	cat(names(s)[1:3], "\n")
-	 }
-#	return(round(kmeansResult$centers, digits=3)
 	#for (i in 1:n) {
-#	cat(paste("cluster ", i, ": ", sep=""))
-	#s <- sort(kmeansResult$centers[i,], decreasing=T)
-#	cat(names(s)[1:3], "\n")
-#	 })
+	#	cat(paste("cluster ", i, ": ", sep=""))
+	#	s <- sort(kmeansResult$centers[i,], decreasing=T)
+	#	cat(names(s)[1:3], "\n")
+	#	 }
+	return(round(kmeansResult$centers, digits=3)
+	for (i in 1:n) {
+	s <- sort(kmeansResult$centers[i,], decreasing=T)
+	cad<-paste(cad,paste("cluster ", i, ": ", sort(kmeansResult$centers[i,], decreasing=T),names(s)[1:3],names(s sep="",))
+	 })
 	}
 
