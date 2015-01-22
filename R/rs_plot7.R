@@ -56,11 +56,11 @@ k<-as.numeric(k)
 	V(g)$label.color <- rgb(.4, 0, 0, .7)
 	V(g)$size <- 2
 	V(g)$frame.color <- NA
-	#barplot(table(V(g)$degree))
+	barplot(table(V(g)$degree))
 
 	
 
-	return(plot(g, layout=layout1))
+	#return(plot(g, layout=layout1))
 	}
 
 
