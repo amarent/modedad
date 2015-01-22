@@ -6,7 +6,7 @@ rs_histograma3<-function(x,y,k,bd){
 	library(igraph)
 k<-as.numeric(k)
 	mongo <- mongo.create()
-	DBNS <- paste("twitter.",bd)
+	DBNS <- paste("twitter.",bd,sep="")
 
 	query <- mongo.bson.buffer.create()
 	mongo.bson.buffer.start.object(query, 'created_at')
