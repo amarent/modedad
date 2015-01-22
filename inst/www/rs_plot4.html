@@ -39,23 +39,26 @@ var Vy= get['fecha2'];
 //})
 //});
 
-$(document).ready(function(){
- var req = ocpu.rpc("rs_plot4", {
+    $(document).ready(function(){
+
+        var req = ocpu.rpc("rs_plot4", {
 k : Vk,
 x : Vx,
 y : Vy
-}, function(output){
-$("#output").text(output.message);
+        }, function(output){
+          $("#output").text(output.message);
+        })
 });
-
 
 
 </script>
 
-<style>
-#plotdiv {
-width: 100%;
-height: 500px;
+ <style>
+#output{
+height: 80px;
+width: 500px;
+border: 1px solid gray;
+padding: 3px;
 }
 </style>
 
