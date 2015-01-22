@@ -36,15 +36,15 @@ k<-as.numeric(k)
 
 	mach_corpus <- Corpus(VectorSource(gids$text))
 
-	#	fc_stopwords<-function(dbs){
-	#		switch(dbs,
-	#			jr_mov = c("movistar", "movistarmx","mimovistarmx","q","d","rt","hola","gracias", stopwords("es")),
-	#			jr_telcel = c("telcel","q","d","rt","hola","gracias", stopwords("es")),
-				#jr_iusacell = c("iusacell","q","d","rt","hola","gracias", stopwords("es")))
-	#	}
+		fc_stopwords<-function(dbs){
+			switch(dbs,
+				jr_mov = c("movistar", "movistarmx","mimovistarmx","q","d","rt","hola","gracias", stopwords("es")),
+				jr_telcel = c("serviciotelcel", "movistarmx","mimovistarmx","q","d","rt",'hola','gracias', stopwords("es")),
+				jr_iusacell = c("movistar", "movistarmx","mimovistarmx","q","d","rt",'hola','gracias', stopwords("es")))
+		}
 
-	#	stopwords<-fc_stopwords(bd)
-stopwords = c("movistar", "movistarmx","mimovistarmx","q","d","rt",'hola','gracias', stopwords("es"))
+		stopwords<-fc_stopwords(bd)
+#stopwords = c("movistar", "movistarmx","mimovistarmx","q","d","rt",'hola','gracias', stopwords("es"))
 	tdm <- TermDocumentMatrix(mach_corpus,
    	control = list(removePunctuation = TRUE,
    	stopwords = stopwords,
