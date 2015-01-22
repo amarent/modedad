@@ -1,4 +1,4 @@
-rs_histograma5<-function(x,y,k){
+rs_histograma5<-function(x,y,k,bd){
 	
 	library(tm)
 	library(rmongodb) 

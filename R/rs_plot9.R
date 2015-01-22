@@ -1,4 +1,4 @@
-rs_plot9<-function(x,y,k){
+rs_plot9<-function(x,y,k,bd){
 	#graph_largecliques_mov
 	library(tm)
 	library(rmongodb) 

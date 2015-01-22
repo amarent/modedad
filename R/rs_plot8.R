@@ -1,4 +1,4 @@
-rs_plot8<-function(x,y,k){
+rs_plot8<-function(x,y,k,bd){
 #	graph_maxcliques_mov
 	library(tm)
 	library(rmongodb) 

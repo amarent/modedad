@@ -1,4 +1,4 @@
-rs_polt1<-function(x,y,k){
+rs_polt1<-function(x,y,k,bd){
 	library(tm)
 	library(rmongodb)
 	library(plyr)

@@ -1,4 +1,4 @@
-rs_plot7<-function(x,y,k){
+rs_plot7<-function(x,y,k,bd){
 #vertdist_mo
 	library(tm)
 	library(rmongodb) 

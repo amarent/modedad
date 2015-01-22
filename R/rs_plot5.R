@@ -1,4 +1,4 @@
-rs_plot5<-function(x,y,k){
+rs_plot5<-function(x,y,k,bd){
 #rs_kmediod_mov	
 	library(tm)
 	library(rmongodb) 
