@@ -29,11 +29,11 @@ var Vy= get['fecha2'];
 
 $(document).ready(function(){
 
-var req = $("#plotdiv").rplot("rs_histograma5", {
+var req = $("#plotdiv").rplot("rs_histograma4", {
 k : Vk,
 x : Vx,
-y : Vy,
-bd : Vc
+y : Vy
+//bd : Vc
 })
 });
 </script>

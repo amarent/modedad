@@ -44,7 +44,8 @@ var Vy= get['fecha2'];
         var req = ocpu.rpc("rs_plot4", {
 k : Vk,
 x : Vx,
-y : Vy
+y : Vy,
+bd : Vc
         }, function(output){
           $("#output").text(output.message);
         })
