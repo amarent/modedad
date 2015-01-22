@@ -1,4 +1,4 @@
-rs_plot7<-function(x="2014-12-12",y="2014-12-25",k=1000){
+rs_plot7<-function(x,y,k){
 #vertdist_mo	
 	library(tm)
 	library(rmongodb) 

@@ -1,4 +1,4 @@
-rs_plot5<-function(x="2014-12-12",y="2014-12-25",k=20 ){
+rs_plot5<-function(x,y,k){
 #rs_kmediod_mov	
 	library(tm)
 	library(rmongodb) 
