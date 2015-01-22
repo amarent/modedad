@@ -38,12 +38,12 @@ k<-as.numeric(k)
 
 	fc_stopwords<-function(dbs){
 		switch(dbs,
-			jr_mov = c("movistar", "movistarmx","mimovistarmx","q","d","rt",'hola','gracias', stopwords("es"))
-			jr_telcel = c("telcel","q","d","rt",'hola','gracias', stopwords("es"))
-			jr_iusacell = c("iusacell","q","d","rt",'hola','gracias', stopwords("es"))
+			jr_mov = c("movistar", "movistarmx","mimovistarmx","q","d","rt","hola","gracias", stopwords("es")),
+			jr_telcel = c("telcel","q","d","rt","hola","gracias", stopwords("es")),
+			jr_iusacell = c("iusacell","q","d","rt","hola","gracias", stopwords("es")))
 	}
 
-	stopwords<-(fcstopwords(db))
+	stopwords<-fcstopwords(db)
 	#stopwords = c("movistar", "movistarmx","mimovistarmx","q","d","rt",'hola','gracias', stopwords("es"))
 	tdm <- TermDocumentMatrix(mach_corpus,
    	control = list(removePunctuation = TRUE,
