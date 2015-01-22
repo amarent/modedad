@@ -27,7 +27,7 @@ var Vk= get['apariciones'];
 var Vx= get['fecha1'];
 var Vy= get['fecha2'];
 
-$(document).ready(function(){
+
 
 //var req = $("#plotdiv").ocpu.rpc("rs_plot4", {
 //k : Vk,
@@ -39,9 +39,11 @@ $(document).ready(function(){
 //})
 //});
 
-
+$(document).ready(function(){
  var req = ocpu.rpc("rs_plot4", {
-myname : myname
+k : Vk,
+x : Vx,
+y : Vy
 }, function(output){
 $("#output").text(output.message);
 });
