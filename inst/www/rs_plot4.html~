@@ -29,11 +29,13 @@ var Vy= get['fecha2'];
 
 $(document).ready(function(){
 
-var req = $("#plotdiv").rplot("rs_plot4", {
+var req = $("#plotdiv").ocpu.rpc("rs_plot4", {
 k : Vk,
 x : Vx,
 y : Vy
 //bd : Vc
+}, function(output){
+$("#output").text(output.message);
 })
 });
 </script>
