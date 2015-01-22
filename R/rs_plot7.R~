@@ -1,5 +1,5 @@
 rs_plot7<-function(x,y,k){
-#vertdist_mo	
+#vertdist_mo
 	library(tm)
 	library(rmongodb) 
 	library(plyr)
@@ -60,7 +60,7 @@ k<-as.numeric(k)
 
 	
 
-	return(plot(g, layout=layout1))
+	#return(plot(g, layout=layout1))
 	}
 
 
