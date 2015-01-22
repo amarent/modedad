@@ -4,6 +4,7 @@ rs_plot9<-function(x,y,k){
 	library(rmongodb) 
 	library(plyr)
 	library(igraph)
+k<-as.numeric(k)
 	mongo <- mongo.create()
 	DBNS <- "twitter.jr_mov"
 

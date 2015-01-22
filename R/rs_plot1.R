@@ -6,7 +6,7 @@ rs_polt1<-function(x,y,k){
 	library(igraph)
 	mongo <- mongo.create()
 	DBNS <- "twitter.jr_mov"
-
+k<-as.numeric(k)
 	query <- mongo.bson.buffer.create()
 	mongo.bson.buffer.start.object(query, 'created_at')
 	mongo.bson.buffer.append.time(query, "$lte", strptime(y,"%Y-%m-%d"))

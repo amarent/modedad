@@ -4,6 +4,7 @@ rs_histograma5<-function(x="2014-12-12",y="2014-12-25",k=.95){
 	library(rmongodb) 
 	library(plyr)
 	library(igraph)
+k<-as.numeric(k)
 	mongo <- mongo.create()
 	DBNS <- "twitter.jr_mov"
 
