@@ -40,7 +40,7 @@ k<-as.numeric(k)
 			switch(dbs,
 				jr_mov = c('movistar','movistarmx','mimovistarmx','q','d','rt','hola','gracias', stopwords("es")),
 				jr_telcel = c('telcel','serviciotelcel','servicio','rt','hola','gracias', stopwords("es")),
-				jr_iusacell = c('iusacell','q','d','rt','hola','gracias', stopwords("es")))
+				jr_iusacell = c('iusacell','servicio','q','d','rt','hola','gracias', stopwords("es")))
 		}
 
 		stopwords<-fc_stopwords(bd)
