@@ -6,7 +6,7 @@ rs_plot5<-function(x,y,k){
 	library(plyr)	
 	k<-as.numeric(k)
 	mongo <- mongo.create()
-	DBNS <- "twitter.jr_mov"
+	DBNS <- paste("twitter.",bd,sep="")
 
 	query <- mongo.bson.buffer.create()
 	mongo.bson.buffer.start.object(query, 'created_at')

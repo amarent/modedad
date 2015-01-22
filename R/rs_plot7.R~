@@ -1,11 +1,13 @@
-rs_polt1<-function(x,y,k){
+rs_plot7<-function(x,y,k){
+#vertdist_mo
 	library(tm)
-	library(rmongodb)
+	library(rmongodb) 
 	library(plyr)
 	library(igraph)
+k<-as.numeric(k)
 	mongo <- mongo.create()
-	DBNS <- paste("twitter.",bd,sep="")
-	k<-as.numeric(k)
+	DBNS <- "twitter.jr_mov"
+
 	query <- mongo.bson.buffer.create()
 	mongo.bson.buffer.start.object(query, 'created_at')
 	mongo.bson.buffer.append.time(query, "$lte", strptime(y,"%Y-%m-%d"))
@@ -50,9 +52,49 @@ rs_polt1<-function(x,y,k){
 	g <- simplify(g)
 	V(g)$label <- V(g)$name
 	V(g)$degree <- degree(g)
-	set.seed(3952)
-	blocks <- cohesive.blocks(g)
+	V(g)$label.cex <- 1
+	V(g)$label.color <- rgb(.4, 0, 0, .7)
+	V(g)$size <- 2
+	V(g)$frame.color <- NA
+	barplot(table(V(g)$degree))
+
 	
-	
-	return(	plot(blocks, g, vertex.size=.3, vertex.label.cex=1.5, edge.color=rgb(.4,.4,0,.3)))
+
+	#return(plot(g, layout=layout1))
 	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	

@@ -1,11 +1,13 @@
-rs_polt1<-function(x,y,k){
+rs_histograma4<-function(x,y,k){
+	
 	library(tm)
-	library(rmongodb)
+	library(rmongodb) 
 	library(plyr)
 	library(igraph)
+k<-as.numeric(k)
 	mongo <- mongo.create()
-	DBNS <- paste("twitter.",bd,sep="")
-	k<-as.numeric(k)
+	DBNS <- "twitter.jr_mov"
+
 	query <- mongo.bson.buffer.create()
 	mongo.bson.buffer.start.object(query, 'created_at')
 	mongo.bson.buffer.append.time(query, "$lte", strptime(y,"%Y-%m-%d"))
@@ -46,13 +48,52 @@ rs_polt1<-function(x,y,k){
 	termDocMatrix<-termDocMatrix[,colSums(termDocMatrix)>0]	
 	termDocMatrix[termDocMatrix>=1] <- 1
 	termMatrix <- termDocMatrix %*% t(termDocMatrix)
+
+
 	g <- graph.adjacency(termMatrix, weighted=T, mode="undirected")
 	g <- simplify(g)
 	V(g)$label <- V(g)$name
 	V(g)$degree <- degree(g)
 	set.seed(3952)
-	blocks <- cohesive.blocks(g)
-	
-	
-	return(	plot(blocks, g, vertex.size=.3, vertex.label.cex=1.5, edge.color=rgb(.4,.4,0,.3)))
+	layout1 <- layout.fruchterman.reingold(g)
+	spc <- spinglass.community(g, spins=10)
+
+	return(plot(g, layout=layout1, vertex.size=.3, vertex.label.cex=1.5, edge.color=rgb(.4,.4,0,.3),
+	vertex.color=spc$membership+1, vertex.label.color=spc$membership+1, asp=FALSE))
 	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	

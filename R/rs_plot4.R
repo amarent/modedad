@@ -7,7 +7,7 @@ rs_plot4<-function(x="2014-12-12",y="2014-12-25",k=20,n=8 ){
 	
 	
 	mongo <- mongo.create()
-	DBNS <- "twitter.jr_mov"
+	DBNS <- paste("twitter.",bd,sep="")
 
 	query <- mongo.bson.buffer.create()
 	mongo.bson.buffer.start.object(query, 'created_at')
