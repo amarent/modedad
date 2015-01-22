@@ -1,13 +1,11 @@
-rs_plot7<-function(x,y,k,bd){
-#vertdist_mo
+rs_polt1<-function(x,y,k,bd){
 	library(tm)
-	library(rmongodb) 
+	library(rmongodb)
 	library(plyr)
 	library(igraph)
-k<-as.numeric(k)
 	mongo <- mongo.create()
 	DBNS <- paste("twitter.",bd,sep="")
-
+	k<-as.numeric(k)
 	query <- mongo.bson.buffer.create()
 	mongo.bson.buffer.start.object(query, 'created_at')
 	mongo.bson.buffer.append.time(query, "$lte", strptime(y,"%Y-%m-%d"))
@@ -36,14 +34,7 @@ k<-as.numeric(k)
 
 	mach_corpus <- Corpus(VectorSource(gids$text))
 
-		fc_stopwords<-function(dbs){
-			switch(dbs,
-				jr_mov = c('movistar','movistarmx','mimovistarmx','q','d','rt','hola','gracias', stopwords("es")),
-				jr_telcel = c('telcel','serviciotelcel','servicio','rt','hola','gracias', stopwords("es")),
-				jr_iusacell = c('iusacell','servicio','q','d','rt','hola','gracias', stopwords("es")))
-		}
-
-		stopwords<-fc_stopwords(bd)
+	stopwords = c("movistar", "movistarmx","mimovistarmx","q","d","rt",'hola','gracias', stopwords("es"))
 	tdm <- TermDocumentMatrix(mach_corpus,
    	control = list(removePunctuation = TRUE,
    	stopwords = stopwords,
@@ -59,49 +50,9 @@ k<-as.numeric(k)
 	g <- simplify(g)
 	V(g)$label <- V(g)$name
 	V(g)$degree <- degree(g)
-	V(g)$label.cex <- 1
-	V(g)$label.color <- rgb(.4, 0, 0, .7)
-	V(g)$size <- 2
-	V(g)$frame.color <- NA
-	barplot(table(V(g)$degree))
-
+	set.seed(3952)
+	blocks <- cohesive.blocks(g)
 	
-
-	#return(plot(g, layout=layout1))
+	
+	return(	plot(blocks, g, vertex.size=.3, vertex.label.cex=1.5, edge.color=rgb(.4,.4,0,.3)))
 	}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-	

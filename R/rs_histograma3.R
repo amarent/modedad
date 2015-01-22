@@ -34,9 +34,16 @@ k<-as.numeric(k)
 		gids <- rbind.fill(gids, tmp.df)
 		}
 
-	mach_corpus <- Corpus(VectorSource(gids$text))
+		fc_stopwords<-function(dbs){
+			switch(dbs,
+				jr_mov = c('movistar','movistarmx','mimovistarmx','q','d','rt','hola','gracias', stopwords("es")),
+				jr_telcel = c('telcel','serviciotelcel','servicio','rt','hola','gracias', stopwords("es")),
+				jr_iusacell = c('iusacell','servicio','q','d','rt','hola','gracias', stopwords("es")))
+		}
 
-	stopwords = c("movistar", "movistarmx","mimovistarmx","q","d","rt",'hola','gracias', stopwords("es"))
+		stopwords<-fc_stopwords(bd)
+
+	mach_corpus <- Corpus(VectorSource(gids$text))
 	tdm <- TermDocumentMatrix(mach_corpus,
    	control = list(removePunctuation = TRUE,
    	stopwords = stopwords,

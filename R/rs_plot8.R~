@@ -1,5 +1,5 @@
-rs_plot7<-function(x,y,k,bd){
-#vertdist_mo
+rs_plot8<-function(x,y,k,bd){
+#	graph_maxcliques_mov
 	library(tm)
 	library(rmongodb) 
 	library(plyr)
@@ -36,14 +36,7 @@ k<-as.numeric(k)
 
 	mach_corpus <- Corpus(VectorSource(gids$text))
 
-		fc_stopwords<-function(dbs){
-			switch(dbs,
-				jr_mov = c('movistar','movistarmx','mimovistarmx','q','d','rt','hola','gracias', stopwords("es")),
-				jr_telcel = c('telcel','serviciotelcel','servicio','rt','hola','gracias', stopwords("es")),
-				jr_iusacell = c('iusacell','servicio','q','d','rt','hola','gracias', stopwords("es")))
-		}
-
-		stopwords<-fc_stopwords(bd)
+	stopwords = c("movistar", "movistarmx","mimovistarmx","q","d","rt",'hola','gracias', stopwords("es"))
 	tdm <- TermDocumentMatrix(mach_corpus,
    	control = list(removePunctuation = TRUE,
    	stopwords = stopwords,
@@ -59,15 +52,14 @@ k<-as.numeric(k)
 	g <- simplify(g)
 	V(g)$label <- V(g)$name
 	V(g)$degree <- degree(g)
-	V(g)$label.cex <- 1
-	V(g)$label.color <- rgb(.4, 0, 0, .7)
-	V(g)$size <- 2
-	V(g)$frame.color <- NA
-	barplot(table(V(g)$degree))
+	set.seed(3952)
+	cl <- maximal.cliques(g)
+	colbar <- rainbow(length(cl) + 1)
+	for (i in 1:length(cl)) {
+	V(g)[cl[[i]]]$color <- colbar[i+1]
+	}
 
-	
-
-	#return(plot(g, layout=layout1))
+	return(	plot(g, mark.groups=cl,vertex.size=.3, vertex.label.cex=1.5, edge.color=rgb(.4,.4,0,.3)))
 	}
 
 

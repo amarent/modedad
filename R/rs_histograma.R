@@ -20,11 +20,18 @@ mydata <- tryCatch(read.table(myurl,sep="\t",quote="\""), error=function(e){
 
 mydata<-as.data.frame(mydata[,1])
 colnames(mydata)<-c("text")
+		fc_stopwords<-function(dbs){
+			switch(dbs,
+				jr_mov = c('movistar','movistarmx','mimovistarmx','q','d','rt','hola','gracias', stopwords("es")),
+				jr_telcel = c('telcel','serviciotelcel','servicio','rt','hola','gracias', stopwords("es")),
+				jr_iusacell = c('iusacell','servicio','q','d','rt','hola','gracias', stopwords("es")))
+		}
 
+		stopwords<-fc_stopwords(bd)
 	mach_corpus <- Corpus(VectorSource(as.vector(mydata)))
 	tdm <- TermDocumentMatrix(mach_corpus,
    	control = list(removePunctuation = TRUE,
-   	stopwords = c("movistar", "movistarmx","mimovistarmx","problemas","problema","hola","gracias", stopwords("es")),
+   	stopwords = stopwords,
    	removeNumbers = TRUE, tolower = TRUE))
 	m <- as.matrix(tdm)
 	word_freqs <- sort(rowSums(m), decreasing=TRUE) 
