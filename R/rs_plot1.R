@@ -1,7 +1,6 @@
 rs_polt1<-function(x,y,k){
-	
 	library(tm)
-	library(rmongodb) 
+	library(rmongodb)
 	library(plyr)
 	library(igraph)
 	mongo <- mongo.create()
@@ -57,39 +56,3 @@ rs_polt1<-function(x,y,k){
 	
 	return(	plot(blocks, g, vertex.size=.3, vertex.label.cex=1.5, edge.color=rgb(.4,.4,0,.3)))
 	}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-	
