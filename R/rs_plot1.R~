@@ -1,12 +1,11 @@
-rs_plot2<-function(x,y,k,bd){
-#rs_graph_largecliques_mov	
+rs_polt1<-function(x,y,k,bd){
 	library(tm)
-	library(rmongodb) 
+	library(rmongodb)
 	library(plyr)
 	library(igraph)
 	mongo <- mongo.create()
 	DBNS <- paste("twitter.",bd,sep="")
-k<-as.numeric(k)
+	k<-as.numeric(k)
 	query <- mongo.bson.buffer.create()
 	mongo.bson.buffer.start.object(query, 'created_at')
 	mongo.bson.buffer.append.time(query, "$lte", strptime(y,"%Y-%m-%d"))
