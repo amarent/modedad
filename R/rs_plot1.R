@@ -1,4 +1,4 @@
-rs_plot2<-function(x,y,k,bd){
+rs_plot1<-function(x,y,k,bd){
 #rs_graph_largecliques_mov	
 	library(tm)
 	library(rmongodb) 
@@ -62,5 +62,5 @@ k<-as.numeric(k)
 	blocks <- cohesive.blocks(g)
 	
 	
-	return(	plot(blocks, g, vertex.size=.3, vertex.label.cex=1.5, edge.color=rgb(.4,.4,0,.3)))
+	return(plot(blocks, g, vertex.size=.3, vertex.label.cex=1.5, edge.color=rgb(.4,.4,0,.3)))
 	}
