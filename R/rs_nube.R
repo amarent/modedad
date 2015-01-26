@@ -22,7 +22,7 @@ mydata<-as.data.frame(mydata[,1])
 colnames(mydata)<-c("text")
 		fc_stopwords<-function(dbs){
 			switch(dbs,
-				jr_mov = c('movistar','movistarmx','mimovistarmx','q','d','rt','hola','gracias', stopwords("es")),
+				jr_movistar = c('movistar','movistarmx','mimovistarmx','q','d','rt','hola','gracias', stopwords("es")),
 				jr_telcel = c('telcel','serviciotelcel','servicio','rt','hola','gracias', stopwords("es")),
 				jr_iusacell = c('iusacell','iusacell','servicio','q','d','rt','hola','gracias', stopwords("es")))
 		}
