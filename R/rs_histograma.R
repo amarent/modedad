@@ -5,7 +5,6 @@ rs_histograma<-function(k,x,y,bd){
 	library(plyr)
 	library(wordcloud)
 	library(RColorBrewer)
-ptr<-4
 k<-as.numeric(k)
 args <- list(
 fecha1 = x,
@@ -39,8 +38,8 @@ colnames(mydata)<-c("text")
 	
 #        par(mfrow=c(1,2))
 #	wordcloud(dm$word,dm$freq,max.words=k,random.order=FALSE,colors=brewer.pal(8,"Dark2"))
-	head(dm,15)
+#	head(dm,k)
 #	par(las=2)
 #	par(mar=c(5,8,4,2))
-	barplot(dm[1:15,2],horiz=TRUE,names.arg=dm[1:15,1],col="darkblue")
+	barplot(dm[1:k,2],horiz=TRUE,names.arg=dm[1:k,1],col="darkblue")
 }
