@@ -37,7 +37,7 @@ colnames(mydata)<-c("text")
 	dm <- data.frame(word=names(word_freqs), freq=word_freqs)
 	
         par(mfrow=c(1,2))
-	wordcloud(dm$word,dm$freq,max.words=k,random.order=FALSE,colors=brewer.pal(8,"Dark2"))
+	wordcloud(dm$word,dm$freq,max.words=50,random.order=FALSE,colors=brewer.pal(8,"Dark2"))
 	head(dm,k)
 	par(las=2)
 	par(mar=c(5,8,4,2))
