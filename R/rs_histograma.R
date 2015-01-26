@@ -41,5 +41,5 @@ colnames(mydata)<-c("text")
 #	head(dm,k)
 #	par(las=2)
 #	par(mar=c(5,8,4,2))
-	barplot(dm[1:k,2],horiz=TRUE,names.arg=dm[1:k,1],col="darkblue")
+	barplot(dm[1:k,2],horiz=TRUE,col="darkblue")
 }
