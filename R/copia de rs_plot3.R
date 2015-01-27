@@ -1,4 +1,4 @@
-rs_plot3<-function(x,y,k,bd){
+assars_plot3<-function(x,y,k,bd){
 #rs_graph_maxcliques_mov
 	library(tm)
 	library(rmongodb) 

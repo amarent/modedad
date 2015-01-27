@@ -1,11 +1,9 @@
 rs_plot3<-function(x,y,k,bd){
 #rs_graph_maxcliques_mov
-
 	library(tm)
 	library(rmongodb) 
 	library(plyr)
-	library(wordcloud)
-	library(RColorBrewer)
+	library(igraph)
 k<-as.numeric(k)
 args <- list(
 fecha1 = x,
@@ -20,8 +18,6 @@ mydata <- tryCatch(read.table(myurl,sep="\t",quote="\""), error=function(e){
 
 mydata<-as.data.frame(mydata[,1])
 colnames(mydata)<-c("text")
-
-
 		fc_stopwords<-function(dbs){
 			switch(dbs,
 				jr_movistar = c('movistar','movistarmx','mimovistarmx','q','d','rt','hola','gracias', stopwords("es")),
@@ -30,7 +26,7 @@ colnames(mydata)<-c("text")
 		}
 
 		stopwords<-fc_stopwords(bd)
-	mach_corpus <- Corpus(VectorSource(gids$text))
+	mach_corpus <- Corpus(VectorSource(as.vector(mydata)))
 	tdm <- TermDocumentMatrix(mach_corpus,
    	control = list(removePunctuation = TRUE,
    	stopwords = stopwords,
