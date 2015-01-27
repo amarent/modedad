@@ -5,6 +5,7 @@ rs_nube<-function(k,x,y,bd){
 	library(plyr)
 	library(wordcloud)
 	library(RColorBrewer)
+ptr<-4
 k<-as.numeric(k)
 args <- list(
 fecha1 = x,
