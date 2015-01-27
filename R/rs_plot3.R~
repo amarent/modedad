@@ -21,7 +21,7 @@ mydata <- tryCatch(read.table(myurl,sep="\t",quote="\""), error=function(e){
 mydata<-as.data.frame(mydata[,1])
 colnames(mydata)<-c("text")
 
-	mach_corpus <- Corpus(VectorSource(gids$text))
+
 		fc_stopwords<-function(dbs){
 			switch(dbs,
 				jr_movistar = c('movistar','movistarmx','mimovistarmx','q','d','rt','hola','gracias', stopwords("es")),
@@ -30,6 +30,7 @@ colnames(mydata)<-c("text")
 		}
 
 		stopwords<-fc_stopwords(bd)
+	mach_corpus <- Corpus(VectorSource(gids$text))
 	tdm <- TermDocumentMatrix(mach_corpus,
    	control = list(removePunctuation = TRUE,
    	stopwords = stopwords,

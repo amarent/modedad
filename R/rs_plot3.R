@@ -30,7 +30,7 @@ colnames(mydata)<-c("text")
 		}
 
 		stopwords<-fc_stopwords(bd)
-	mach_corpus <- Corpus(VectorSource(gids$text))
+	mach_corpus <- Corpus(VectorSource(as.vector(mydata)))
 	tdm <- TermDocumentMatrix(mach_corpus,
    	control = list(removePunctuation = TRUE,
    	stopwords = stopwords,
