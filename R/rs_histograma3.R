@@ -51,6 +51,8 @@ k<-as.numeric(k)
 	m <- as.matrix(tdm)
 	word_freqs <- sort(rowSums(m), decreasing=TRUE) 
 	dm <- data.frame(word=names(word_freqs), freq=word_freqs)
+
+
 	termDocMatrix<-m[dm[1:k,1],]
 	termDocMatrix<-termDocMatrix[,colSums(termDocMatrix)>0]	
 	termDocMatrix[termDocMatrix>=1] <- 1

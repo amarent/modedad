@@ -52,6 +52,7 @@ rs_plot4<-function(x,y,k,bd ){
 	m <- as.matrix(tdm)
 	word_freqs <- sort(rowSums(m), decreasing=TRUE) 
 	dm <- data.frame(word=names(word_freqs), freq=word_freqs)
+
 	termDocMatrix<-m[dm[1:k,1],]
 	m3 <- t(termDocMatrix)
 	set.seed(122)
