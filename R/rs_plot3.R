@@ -5,6 +5,7 @@ rs_plot3<-function(x,y,k,bd){
 	library(plyr)
 	library(igraph)
 	k<-as.numeric(k)
+k<-as.numeric(k)
 args <- list(
 fecha1 = x,
 fecha2 = y,
@@ -30,7 +31,7 @@ colnames(mydata)<-c("text")
 	tdm <- TermDocumentMatrix(mach_corpus,
    	control = list(removePunctuation = TRUE,
    	stopwords = stopwords,
-   	removeNumbers = TRUE, tolower = TRUE,wordLengths=c(1,Inf)))
+   	removeNumbers = TRUE, tolower = TRUE))
 	m <- as.matrix(tdm)
 	word_freqs <- sort(rowSums(m), decreasing=TRUE) 
 	dm <- data.frame(word=names(word_freqs), freq=word_freqs)
