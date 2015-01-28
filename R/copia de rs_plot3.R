@@ -1,32 +1,48 @@
-rs_plot3<-function(x,y,k,bd){
+aars_plot3<-function(x,y,k,bd){
 #rs_graph_maxcliques_mov
 	library(tm)
 	library(rmongodb) 
 	library(plyr)
 	library(igraph)
-	k<-as.numeric(k)
-args <- list(
-fecha1 = x,
-fecha2 = y,
-companhia= bd
-);
-myurl <- paste("http://10.225.190.192/atweets/test.php?",paste(names(args), args, sep="=", collapse="&"), sep="");
-    
-mydata <- tryCatch(read.table(myurl,sep="\t",quote="\""), error=function(e){
-              stop("Fallo !!")
-});
+	mongo <- mongo.create()
+	DBNS <- paste("twitter.",bd,sep="")
+k<-as.numeric(k)
+	query <- mongo.bson.buffer.create()
+	mongo.bson.buffer.start.object(query, 'created_at')
+	mongo.bson.buffer.append.time(query, "$lte", strptime(y,"%Y-%m-%d"))
+	mongo.bson.buffer.finish.object(query)
+	mongo.bson.buffer.start.object(query, 'created_at')
+	mongo.bson.buffer.append.time(query, "$gte", strptime(x,"%Y-%m-%d"))
+	mongo.bson.buffer.finish.object(query)
+	query <-mongo.bson.from.buffer(query)
 
-mydata<-as.data.frame(mydata[,1])
-colnames(mydata)<-c("text")
+	fields <-mongo.bson.buffer.create()
+	mongo.bson.buffer.append(fields, "text", 1L)
+	mongo.bson.buffer.append(fields, "id", 1L)
+	mongo.bson.buffer.append(fields, "_id", 0L)
+	fields <- mongo.bson.from.buffer(fields)
+
+	twts <- mongo.find(mongo, ns = DBNS, query = query,
+	 fields = fields, limit = 10000L)
+
+
+	gids <- data.frame(stringsAsFactors = FALSE)
+	while (mongo.cursor.next(twts)) {
+		tmp <- mongo.bson.to.list(mongo.cursor.value(twts))
+		tmp.df <- as.data.frame(t(unlist(tmp)), stringsAsFactors = F)
+		gids <- rbind.fill(gids, tmp.df)
+		}
+
+	mach_corpus <- Corpus(VectorSource(gids$text))
+
 		fc_stopwords<-function(dbs){
 			switch(dbs,
 				jr_movistar = c('movistar','movistarmx','mimovistarmx','q','d','rt','hola','gracias', stopwords("es")),
 				jr_telcel = c('telcel','serviciotelcel','servicio','rt','hola','gracias', stopwords("es")),
-				jr_iusacell = c('iusacell','iusacell','servicio','q','d','rt','hola','gracias', stopwords("es")))
+				jr_iusacell = c('iusacell','servicio','q','d','rt','hola','gracias', stopwords("es")))
 		}
 
 		stopwords<-fc_stopwords(bd)
-	mach_corpus <- Corpus(VectorSource(as.vector(mydata)))
 	tdm <- TermDocumentMatrix(mach_corpus,
    	control = list(removePunctuation = TRUE,
    	stopwords = stopwords,
