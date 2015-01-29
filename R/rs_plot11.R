@@ -1,0 +1,17 @@
+rs_plot11<-function(k,x,y,bd){	
+	library(tm)
+	library(rmongodb) 
+	library(plyr)
+	library(wordcloud)
+	library(RColorBrewer)
+	k<-as.numeric(k)
+	m <- rs_todos(x,y,bd)
+	word_freqs <- sort(rowSums(m), decreasing=TRUE) 
+	dm <- data.frame(word=names(word_freqs), freq=word_freqs)
+        par(mfrow=c(1,2))
+	wordcloud(dm$word,dm$freq,max.words=50,random.order=FALSE,colors=brewer.pal(8,"Dark2"))
+	head(dm,k)
+	par(las=2)
+	par(mar=c(5,8,4,2))
+	barplot(dm[1:k,2],horiz=TRUE,names.arg=dm[1:k,1],col="darkblue")
+}

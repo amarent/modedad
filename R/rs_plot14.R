@@ -1,5 +1,5 @@
-rs_plot9<-function(x,y,k,bd){
-	#graph_largecliques_mov
+rs_plot14<-function(x,y,k,bd){
+	
 	library(tm)
 	library(rmongodb) 
 	library(plyr)
@@ -18,47 +18,9 @@ rs_plot9<-function(x,y,k,bd){
 	V(g)$label <- V(g)$name
 	V(g)$degree <- degree(g)
 	set.seed(3952)
-	cl <- largest.cliques(g)
-	colbar <- rainbow(length(cl) + 1)
-	for (i in 1:length(cl)) {
-	V(g)[cl[[i]]]$color <- colbar[i+1]
+	layout1 <- layout.fruchterman.reingold(g)
+	spc <- spinglass.community(g, spins=10)
+
+	return(plot(g, layout=layout1, vertex.size=.3, vertex.label.cex=1.5, edge.color=rgb(.4,.4,0,.3),
+	vertex.color=spc$membership+1, vertex.label.color=spc$membership+1, asp=FALSE))
 	}
-
-	return(	plot(g, mark.groups=cl,vertex.size=.3, vertex.label.cex=1.5, edge.color=rgb(.4,.4,0,.3)))
-	}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-	
