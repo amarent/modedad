@@ -20,7 +20,7 @@ rs_todos<-function(x,y,bd){
 			jr_iusacell = c('iusacell','iusacell','servicio','q','d','rt','hola','gracias', stopwords("es")))
 			}
 	stopwords<-fc_stopwords(bd)
-	mach_corpus <- Corpus(VectorSource(as.vector(mydata)))
+	mach_corpus <- Corpus(VectorSource(as.vector(mydata[,2])))
 	tdm <- TermDocumentMatrix(mach_corpus,
    	control = list(removePunctuation = TRUE,
    	stopwords = stopwords,
