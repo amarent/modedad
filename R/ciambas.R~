@@ -32,12 +32,11 @@ desc<-clean(as.character(mydataD$DESCRIPCION))
 
 l2<-list(desc)
 layout(matrix(c(1,1,2,3),2,2,byrow=T),widths=c(1.8,2.2),heights=c(1,2))
-title(l2)
 plot(-1:1,-1:1,type="n",xlab="",ylab="",bty="n",xaxt='n',yaxt='n')
 text(x=-1,y=c(-.5),labels=l2,adj=0)
 plot(-1:1,-1:1,type="n",xlab="",ylab="",bty="n",xaxt='n',yaxt='n')
 text(x=-1,y=c(.8,.6,.4,.2,0,2),labels=l,adj=0)
-plot(h,freq=F,labels=labs,ylim=c(0,1.08*max(h$density)),xlab=colnames(mydata),ylab="Frecuencias",col="#51C6D9",border="#00517A",main=paste("Histograma de ",colnames(mydata)))
+plot(h,freq=F,labels=labs,ylim=c(0,1.08*max(h$density)),xlab=colnames(mydata),ylab="(porcentaje)",col="#51C6D9",border="#00517A")
 
 #par(mfrow=c(2,2))
 #plot(-1:1,-1:1,type="n",xlab="",ylab="",bty="n",xaxt='n',yaxt='n')
