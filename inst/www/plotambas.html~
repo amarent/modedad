@@ -40,7 +40,7 @@ mes : Vmes
 <style>
 #plotdiv {
 position: relative;
-width: 70%;
+width: 700%;
 height: 600px;
 border: solid gray 1px;
 }
