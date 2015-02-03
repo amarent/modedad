@@ -30,7 +30,7 @@ var Vmes= get['cve_mes'];
 //init this script when the page has loaded
 $(document).ready(function(){
 
-var req = $("#plotdiv").rplot("ciambas", {
+var req = $("#plotdiv").rplot("ambasci", {
 rubro : Vrubro,
 n : Vn,
 mes : Vmes
