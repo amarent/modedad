@@ -1,4 +1,4 @@
-plot11<-function(x,y,k,con,bd){
+rs_plot11<-function(x,y,k,con,bd){
 	#kmediod_mov
 	library(tm)
 	library(rmongodb) 

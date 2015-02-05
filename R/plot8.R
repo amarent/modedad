@@ -1,4 +1,4 @@
-plot8<-function(x,y,k,bd,con){
+rs_plot8<-function(x,y,k,bd,con){
 #hist2_mov
 	library(tm)
 	library(rmongodb) 

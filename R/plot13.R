@@ -1,4 +1,4 @@
-plot13<-function(x,y,k,bd,con){
+rs_plot13<-function(x,y,k,bd,con){
 	#twomode_graph_mov
 	library(tm)
 	library(rmongodb) 

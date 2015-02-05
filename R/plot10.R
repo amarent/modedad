@@ -1,4 +1,4 @@
-plot10<-function(x,y,k,con,bd,n=8){
+rs_plot10<-function(x,y,k,con,bd,n=8){
 #kmeans_mov
 	library(tm)
 	library(rmongodb) 
@@ -10,15 +10,15 @@ plot10<-function(x,y,k,con,bd,n=8){
 	dm <- data.frame(word=names(word_freqs), freq=word_freqs)
 	termDocMatrix<-m[dm[1:k,1],]
 	m3 <- t(termDocMatrix)
-	#	set.seed(122)
-	#	kmeansResult <- kmeans(m3, n)
+#	set.seed(122)
+#	kmeansResult <- kmeans(m3, n)
 	
-	#	return(round(kmeansResult$centers, digits=3)
-	#	for (i in 1:n) {
-	#	cat(paste("cluster ", i, ": ", sep=""))
-	#	s <- sort(kmeansResult$centers[i,], decreasing=T)
-	#cat(names(s)[1:3], "\n")
-	 	#})
+#	return(round(kmeansResult$centers, digits=3)
+	#for (i in 1:n) {
+#	cat(paste("cluster ", i, ": ", sep=""))
+	#s <- sort(kmeansResult$centers[i,], decreasing=T)
+#	cat(names(s)[1:3], "\n")
+	 })
 	}
 
 

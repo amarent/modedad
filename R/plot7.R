@@ -1,4 +1,4 @@
-plot7<-function(x,y,k,con,bd){
+rs_plot7<-function(x,y,k,con,bd){
 #graph_mov2
 	library(tm)
 	library(rmongodb) 

@@ -1,5 +1,5 @@
-plot6<-function(x,y,k,con,bd){
-#graph_mov
+rs_plot14<-function(x,y,k,bd,con){
+#verdist_mov
 	library(tm)
 	library(rmongodb) 
 	library(plyr)
@@ -7,6 +7,7 @@ plot6<-function(x,y,k,con,bd){
 	k<-as.numeric(k)
 	m <- rs_todos(x,y,bd,con)
 
+	
 	word_freqs <- sort(rowSums(m), decreasing=TRUE) 
 	dm <- data.frame(word=names(word_freqs), freq=word_freqs)
 	termDocMatrix<-m[dm[1:k,1],]
@@ -17,8 +18,12 @@ plot6<-function(x,y,k,con,bd){
 	g <- simplify(g)
 	V(g)$label <- V(g)$name
 	V(g)$degree <- degree(g)
-	set.seed(3952)
-	layout1 <- layout.fruchterman.reingold(g)
+	V(g)$label.cex <- 1
+	V(g)$label.color <- rgb(.4, 0, 0, .7)
+	V(g)$size <- 2
+	V(g)$frame.color <- NA
+	barplot(table(V(g)$degree))
+
 	
 
 	return(plot(g, layout=layout1))

@@ -1,4 +1,4 @@
-plot2<-function(x,y,k,con,bd){
+rs_plot2<-function(x,y,k,con,bd){
 #graph_cohesive_blocks_mov	
 	library(tm)
 	library(rmongodb) 

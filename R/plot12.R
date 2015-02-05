@@ -1,4 +1,4 @@
-plot12<-function(x,y,k,con,bd){	
+rs_plot12<-function(x,y,k,con,bd){	
 #nuage_mov
 	library(tm)
 	library(rmongodb) 
