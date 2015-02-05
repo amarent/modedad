@@ -1,12 +1,12 @@
-rs_plot12<-function(x,y,k,bd,con){
-	
+plot2<-function(x,y,k,con,bd){
+#graph_cohesive_blocks_mov	
 	library(tm)
 	library(rmongodb) 
 	library(plyr)
 	library(igraph)
 	k<-as.numeric(k)
 	m <- rs_todos(x,y,bd,con)
-
+	
 	word_freqs <- sort(rowSums(m), decreasing=TRUE) 
 	dm <- data.frame(word=names(word_freqs), freq=word_freqs)
 	termDocMatrix<-m[dm[1:k,1],]
@@ -18,8 +18,43 @@ rs_plot12<-function(x,y,k,bd,con){
 	V(g)$label <- V(g)$name
 	V(g)$degree <- degree(g)
 	set.seed(3952)
-	layout1 <- layout.fruchterman.reingold(g)
+	blocks <- cohesive.blocks(g)
 	
-
-	return(plot(g, layout=layout1))
+	
+	return(	plot(blocks, g, vertex.size=.3, vertex.label.cex=1.5, edge.color=rgb(.4,.4,0,.3)))
 	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	

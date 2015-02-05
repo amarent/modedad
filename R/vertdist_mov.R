@@ -1,11 +1,12 @@
-rs_plot2<-function(x,y,k,bd,con){
-#rs_graph_largecliques_mov	
+plot14<-function(x,y,k,bd,con){
+#verdist_mov
 	library(tm)
 	library(rmongodb) 
 	library(plyr)
 	library(igraph)
 	k<-as.numeric(k)
 	m <- rs_todos(x,y,bd,con)
+
 	
 	word_freqs <- sort(rowSums(m), decreasing=TRUE) 
 	dm <- data.frame(word=names(word_freqs), freq=word_freqs)
@@ -17,15 +18,49 @@ rs_plot2<-function(x,y,k,bd,con){
 	g <- simplify(g)
 	V(g)$label <- V(g)$name
 	V(g)$degree <- degree(g)
-	set.seed(3952)
-	cl <- largest.cliques(g)
-	colbar <- rainbow(length(cl) + 1)
-	for (i in 1:length(cl)) {
-	V(g)[cl[[i]]]$color <- colbar[i+1]
+	V(g)$label.cex <- 1
+	V(g)$label.color <- rgb(.4, 0, 0, .7)
+	V(g)$size <- 2
+	V(g)$frame.color <- NA
+	barplot(table(V(g)$degree))
+
+	
+
+	return(plot(g, layout=layout1))
 	}
 
-	return(	plot(g, mark.groups=cl,vertex.size=.3, vertex.label.cex=1.5, edge.color=rgb(.4,.4,0,.3)))
-	}
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	

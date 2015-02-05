@@ -1,5 +1,5 @@
-rs_plot7<-function(x,y,k,bd,con){
-#vertdist_mo
+plot6<-function(x,y,k,con,bd){
+#graph_mov
 	library(tm)
 	library(rmongodb) 
 	library(plyr)
@@ -17,16 +17,45 @@ rs_plot7<-function(x,y,k,bd,con){
 	g <- simplify(g)
 	V(g)$label <- V(g)$name
 	V(g)$degree <- degree(g)
-	V(g)$label.cex <- 1
-	V(g)$label.color <- rgb(.4, 0, 0, .7)
-	V(g)$size <- 2
-	V(g)$frame.color <- NA
-	barplot(table(V(g)$degree))
-
+	set.seed(3952)
+	layout1 <- layout.fruchterman.reingold(g)
 	
 
-	#return(plot(g, layout=layout1))
+	return(plot(g, layout=layout1))
 	}
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	

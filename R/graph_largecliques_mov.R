@@ -1,12 +1,14 @@
-rs_plot3<-function(x,y,k,bd,con){
-#rs_graph_maxcliques_mov
+plot4<-function(x,y,k,con,bd){
+#graph_largecliques_mov
 	library(tm)
 	library(rmongodb) 
 	library(plyr)
 	library(igraph)
 	k<-as.numeric(k)
 	m <- rs_todos(x,y,bd,con)
-	
+
+
+
 	word_freqs <- sort(rowSums(m), decreasing=TRUE) 
 	dm <- data.frame(word=names(word_freqs), freq=word_freqs)
 	termDocMatrix<-m[dm[1:k,1],]
@@ -18,7 +20,7 @@ rs_plot3<-function(x,y,k,bd,con){
 	V(g)$label <- V(g)$name
 	V(g)$degree <- degree(g)
 	set.seed(3952)
-	cl <- maximal.cliques(g)
+	cl <- largest.cliques(g)
 	colbar <- rainbow(length(cl) + 1)
 	for (i in 1:length(cl)) {
 	V(g)[cl[[i]]]$color <- colbar[i+1]
@@ -28,3 +30,37 @@ rs_plot3<-function(x,y,k,bd,con){
 	}
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
