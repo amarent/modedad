@@ -26,6 +26,7 @@ var Vc= get['companhia'];
 var Vk= get['apariciones'];
 var Vx= get['fecha1'];
 var Vy= get['fecha2'];
+var Vcon= get['contestados'];
 
 $(document).ready(function(){
 
@@ -33,7 +34,8 @@ var req = $("#plotdiv").rplot("rs_plot12", {
 k : Vk,
 x : Vx,
 y : Vy,
-bd : Vc
+bd : Vc,
+con : Vcon
 })
 });
 </script>

@@ -1,9 +1,10 @@
-rs_todos<-function(x,y,bd){	
+rs_todos<-function(x,y,bd,con){	
 	library(tm)
 	args <- list(
 		fecha1 = x,
 		fecha2 = y,
-		companhia= bd
+		companhia= bd,
+		contestados= con
 	);
 	myurl <- paste("http://10.225.190.192/atweets/test2.php?",paste(names(args), args, sep="=", collapse="&"), sep="");
     

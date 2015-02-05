@@ -1,11 +1,11 @@
-rs_plot1<-function(x,y,k,bd){
+rs_plot1<-function(x,y,k,bd,con){
 #rs_graph_largecliques_mov	
 	library(tm)
 	library(rmongodb) 
 	library(plyr)
 	library(igraph)
 	k<-as.numeric(k)
-	m <- rs_todos(x,y,bd)
+	m <- rs_todos(x,y,bd,con)
 	word_freqs <- sort(rowSums(m), decreasing=TRUE) 
 	dm <- data.frame(word=names(word_freqs), freq=word_freqs)
 
@@ -19,7 +19,6 @@ rs_plot1<-function(x,y,k,bd){
 	V(g)$degree <- degree(g)
 	set.seed(3952)
 	blocks <- cohesive.blocks(g)
-	
 	
 	return(plot(blocks, g, vertex.size=.3, vertex.label.cex=1.5, edge.color=rgb(.4,.4,0,.3)))
 	}

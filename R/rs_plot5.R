@@ -1,11 +1,11 @@
-rs_plot5<-function(x,y,k,bd){
+rs_plot5<-function(x,y,k,bd,con){
 #rs_kmediod_mov	
 	library(tm)
 	library(rmongodb) 
 	library(fpc)
 	library(plyr)	
 	k<-as.numeric(k)
-	m <- rs_todos(x,y,bd)
+	m <- rs_todos(x,y,bd,con)
 
 	word_freqs <- sort(rowSums(m), decreasing=TRUE) 
 	dm <- data.frame(word=names(word_freqs), freq=word_freqs)
