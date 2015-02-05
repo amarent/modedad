@@ -18,7 +18,7 @@ rs_plot10<-function(x,y,k,con,bd,n=8){
 #	cat(paste("cluster ", i, ": ", sep=""))
 	#s <- sort(kmeansResult$centers[i,], decreasing=T)
 #	cat(names(s)[1:3], "\n")
-	 })
+#	 })
 	}
 
 
