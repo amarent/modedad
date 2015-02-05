@@ -26,41 +26,5 @@ rs_plot14<-function(x,y,k,bd,con){
 
 	
 
-	return(plot(g, layout=layout1))
+#	return(plot(g, layout=layout1))
 	}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-	

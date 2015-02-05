@@ -34,7 +34,7 @@ rs_plot13<-function(x,y,k,bd,con){
 	plot(g, layout=layout.fruchterman.reingold)
 	
 
-	return(plot(g, layout=layout1))
+#	return(plot(g, layout=layout1))
 	}
 
 
