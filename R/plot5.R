@@ -1,11 +1,11 @@
-rs_plot5<-function(x,y,k,con,bd){
+rs_plot5<-function(x,y,k,con,bd,rt){
 #graph_maxcliques_mov	
 	library(tm)
 	library(rmongodb) 
 	library(plyr)
 	library(igraph)
 	k<-as.numeric(k)
-	m <- rs_todos(x,y,bd,con)
+	m <- rs_todos(x,y,bd,con,rt)
 
 
 	word_freqs <- sort(rowSums(m), decreasing=TRUE) 

@@ -1,4 +1,4 @@
-rs_plot12<-function(x,y,k,con,bd){	
+rs_plot12<-function(x,y,k,con,bd,rt){	
 #nuage_mov
 	library(tm)
 	library(rmongodb) 
@@ -6,7 +6,7 @@ rs_plot12<-function(x,y,k,con,bd){
 	library(wordcloud)
 	library(RColorBrewer)
 	k<-as.numeric(k)
-	m <- rs_todos(x,y,bd,con)
+	m <- rs_todos(x,y,bd,con,rt)
 
 	word_freqs <- sort(rowSums(m), decreasing=TRUE) 
 	dm <- data.frame(word=names(word_freqs), freq=word_freqs)

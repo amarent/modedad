@@ -1,11 +1,11 @@
-rs_plot8<-function(x,y,k,bd,con){
+rs_plot8<-function(x,y,k,bd,con,rt){
 #hist2_mov
 	library(tm)
 	library(rmongodb) 
 	library(plyr)
 	library(igraph)
 	k<-as.numeric(k)
-	m <- rs_todos(x,y,bd,con)
+	m <- rs_todos(x,y,bd,con,rt)
 
 	word_freqs <- sort(rowSums(m), decreasing=TRUE) 
 	dm <- data.frame(word=names(word_freqs), freq=word_freqs)

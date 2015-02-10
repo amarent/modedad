@@ -21,12 +21,14 @@ function getGET(){
    return get;
 }
 
+
 var get = getGET();
 var Vc= get['companhia'];
 var Vk= get['apariciones'];
 var Vx= get['fecha1'];
 var Vy= get['fecha2'];
 var Vcon= get['contestados'];
+var Vrt= get["retweet"];
 $(document).ready(function(){
 
 var req = $("#plotdiv").rplot("rs_plot1", {
@@ -34,7 +36,8 @@ k : Vk,
 x : Vx,
 y : Vy,
 bd : Vc,
-con : Vcon
+con : Vcon,
+rt : Vrt
 })
 });
 </script>
