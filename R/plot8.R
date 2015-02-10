@@ -47,13 +47,13 @@ rs_plot8<-function(x,y,k,bd,con,rt){
 	V(g)$label <- V(g)$name
 	V(g)$degree <- degree(g)
 	set.seed(3952)
-	layout1 <- layout.fruchterman.reingold(g)
+#	layout1 <- layout.fruchterman.reingold(g)
 	spc <- spinglass.community(g, spins=10)
 
-#	plot(g, layout=layout1, vertex.size=.3, vertex.label.cex=1.5, edge.color=rgb(.4,.4,0,.3),
-#	vertex.color=spc$membership+1, vertex.label.color=spc$membership+1, asp=FALSE)
-	return(plot(g, layout=layout1, vertex.size=.3, vertex.label.cex=1.5, edge.color=rgb(.4,.4,0,.3),
-	vertex.color=spc$membership+1, vertex.label.color=spc$membership+1, asp=FALSE))
+	plot(g, layout=layout1, vertex.size=.3, vertex.label.cex=1.5, edge.color=rgb(.4,.4,0,.3),
+	vertex.color=spc$membership+1, vertex.label.color=spc$membership+1, asp=FALSE)
+#	return(plot(g, layout=layout1, vertex.size=.3, vertex.label.cex=1.5, edge.color=rgb(.4,.4,0,.3),
+#	vertex.color=spc$membership+1, vertex.label.color=spc$membership+1, asp=FALSE))
 	}
 
 

@@ -20,7 +20,7 @@ rs_plot3<-function(x,y,k,con,bd,rt){
 	V(g)$label <- V(g)$name
 	V(g)$degree <- degree(g)
 	set.seed(3952)
-	layout1 <- layout.fruchterman.reingold(g)
+#	layout1 <- layout.fruchterman.reingold(g)
 	spc <- spinglass.community(g, spins=10)
 
 	return(plot(g, layout=layout1, vertex.size=.3, vertex.label.cex=1.5, edge.color=rgb(.4,.4,0,.3),
