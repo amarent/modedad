@@ -1,11 +1,11 @@
-rs_plot13<-function(x,y,k,bd,con,rt){
+rs_plot13<-function(x,y,k,bd,con,rt,hr){
 	#twomode_graph_mov
 	library(tm)
 	library(rmongodb) 
 	library(plyr)
 	library(igraph)
 	k<-as.numeric(k)
-	m <- rs_todos(x,y,bd,con,rt)
+	m <- rs_todos(x,y,bd,con,rt,hr)
 
 
 	word_freqs <- sort(rowSums(m), decreasing=TRUE) 

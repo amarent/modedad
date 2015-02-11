@@ -1,10 +1,10 @@
-rs_plot9<-function(x,y,k,bd,con,rt){
+rs_plot9<-function(x,y,k,bd,con,rt,hr){
 	#hist_mov
 	library(tm)
 	library(rmongodb) 
 	library(plyr)
 	k<-as.numeric(k)
-	m <- rs_todos(x,y,bd,con,rt)
+	m <- rs_todos(x,y,bd,con,rt,hr)
 
 
 	word_freqs <- sort(rowSums(m), decreasing=TRUE) 

@@ -1,11 +1,11 @@
-rs_plot7<-function(x,y,k,con,bd,rt){
+rs_plot7<-function(x,y,k,con,bd,rt,hr){
 #graph_mov2
 	library(tm)
 	library(rmongodb) 
 	library(plyr)
 	library(igraph)
 	k<-as.numeric(k)
-	m <- rs_todos(x,y,bd,con,rt)
+	m <- rs_todos(x,y,bd,con,rt,hr)
 
 	word_freqs <- sort(rowSums(m), decreasing=TRUE) 
 	dm <- data.frame(word=names(word_freqs), freq=word_freqs)

@@ -1,11 +1,12 @@
-rs_todos<-function(x,y,bd,con,rt){	
+rs_todos<-function(x,y,bd,con,rt,hr){	
 	library(tm)
 	args <- list(
 		fecha1 = x,
 		fecha2 = y,
 		companhia= bd,
 		contestados= con,
-		retweet= rt
+		retweet = rt,
+		time= hr
 	);
 	myurl <- paste("http://10.225.190.192/atweets/testfinal.php?",paste(names(args), args, sep="=", collapse="&"), sep="");
     

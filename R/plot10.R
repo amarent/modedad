@@ -1,9 +1,9 @@
-rs_plot10<-function(x,y,k,con,bd,n=8,rt){
+rs_plot10<-function(x,y,k,con,bd,n=8,rt,hr){
 #kmeans_mov
 	library(tm)
 	library(rmongodb) 
 	k<-as.numeric(k)
-	m <- rs_todos(x,y,bd,con,rt)
+	m <- rs_todos(x,y,bd,con,rt,hr)
 
 
 	word_freqs <- sort(rowSums(m), decreasing=TRUE) 

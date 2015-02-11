@@ -28,7 +28,7 @@ var Vx= get['fecha1'];
 var Vy= get['fecha2'];
 var Vcon= get['contestados'];
 var Vrt= get["retweet"];
-
+var Vhr= get["time"];
 $(document).ready(function(){
 
 var req = $("#plotdiv").rplot("rs_plot7", {
@@ -37,7 +37,8 @@ x : Vx,
 y : Vy,
 bd : Vc,
 con : Vcon,
-rt : Vrt
+rt : Vrt,
+hr : Vhr
 })
 });
 </script>
