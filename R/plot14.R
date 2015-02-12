@@ -1,11 +1,11 @@
-rs_plot14<-function(x,y,k,bd,con,rt,hr){
+rs_plot14<-function(x,y,k,bd,con,rt,hr,t){
 #verdist_mov
 	library(tm)
 	library(rmongodb) 
 	library(plyr)
 	library(igraph)
 	k<-as.numeric(k)
-	m <- rs_todos(x,y,bd,con,rt,hr)
+	m <- rs_todos(x,y,bd,con,rt,hr,t)
 
 	
 	word_freqs <- sort(rowSums(m), decreasing=TRUE) 

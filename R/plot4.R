@@ -1,11 +1,11 @@
-rs_plot4<-function(x,y,k,con,bd,rt,hr){
+rs_plot4<-function(x,y,k,con,bd,rt,hr,t){
 #graph_largecliques_mov
 	library(tm)
 	library(rmongodb) 
 	library(plyr)
 	library(igraph)
 	k<-as.numeric(k)
-	m <- rs_todos(x,y,bd,con,rt,hr)
+	m <- rs_todos(x,y,bd,con,rt,hr,t)
 
 
 
