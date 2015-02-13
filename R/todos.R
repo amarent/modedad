@@ -16,6 +16,7 @@ rs_todos<-function(x,y,bd,con,rt,hr,t){
 		});
 
 	#mydata<-as.data.frame(mydata[,1])
+	mydata<-mydata[(!mydata[,2]==""),]
 	colnames(mydata)<-c("text")
 	fc_stopwords<-function(dbs){
 		switch(dbs,
