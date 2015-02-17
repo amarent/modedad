@@ -4,6 +4,7 @@ rs_plot1<-function(x,y,bd,k,con,rt,hr,t){
 	library(rmongodb) 
 	library(plyr)
 	library(igraph)
+	library(networkD3)
 	k<-as.numeric(k)
 	m <- rs_todos(x,y,bd,con,rt,hr,t)
 
