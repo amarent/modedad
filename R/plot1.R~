@@ -13,5 +13,5 @@ rs_plot1<-function(x,y,bd,k,con,rt,hr,t){
 	distMatrix <- dist(scale(termDocMatrix))
 	fit <- hclust(distMatrix, method="ward")
 	
-	return(plot(fit, main="Dendograma",xlab="distancia",ylab=""))
+	return(plot(fit, main="Dendograma",xlab="",ylab="distancia"))
 	}
