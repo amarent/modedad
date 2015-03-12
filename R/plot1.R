@@ -13,6 +13,6 @@ rs_plot1<-function(x,y,bd,k,con,rt,hr,t){
 	termDocMatrix<-m[dm[1:k,1],]
 	distMatrix <- dist(scale(termDocMatrix))
 	fit <- hclust(distMatrix, method="ward")
-	return(treeNetwork(as.treeNetwork(fit)))
-	#return(plot(fit, main="Dendograma",xlab="",ylab="distancia"))
+	#return(treeNetwork(as.treeNetwork(fit)))
+	return(plot(fit, main="Dendograma",xlab="",ylab="distancia"))
 	}
