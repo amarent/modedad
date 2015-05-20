@@ -9,7 +9,7 @@ rs_todos<-function(x,y,bd,con,rt,hr,t){
 		time= hr,
 		texto= t
 	);
-	myurl <- paste("http://localhost/atweets/testfinal.php?",paste(names(args), args, sep="=", collapse="&"), sep="");
+	myurl <- paste("http://10.225.190.192/atweets/testfinal.php?",paste(names(args), args, sep="=", collapse="&"), sep="");
     
 	mydata <- tryCatch(read.table(myurl,sep="\t",quote="\""), error=function(e){
               stop("Fallo !!")
