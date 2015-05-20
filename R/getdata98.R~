@@ -20,7 +20,4 @@ getdata98 <- function(rubro, mes, n)
 return(mydata2);
  }
 
-rubro="MINREC"
-mes=201501
-n=10
 
