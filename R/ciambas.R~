@@ -1,7 +1,7 @@
 ciambas<-function(rubro,mes,n) {
 
 mydata<-getdata98(rubro,mes,n)
-x<-mydata[!is.na(mydata[,1]),]
+#x<-mydata[!is.na(mydata[,1]),]
 x<-x[x<quantile(x,.90)]
 
 mydataD<-getdata98Var(rubro)
