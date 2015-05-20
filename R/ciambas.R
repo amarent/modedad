@@ -2,7 +2,7 @@ ciambas<-function(rubro,mes,n) {
 
 mydata<-getdata98(rubro,mes,n)
 x<-mydata[!is.na(mydata[,1]),]
-x<-x[x>quantile(x,.50)]
+x<-x[x>quantile(x,.80)]
 
 mydataD<-getdata98Var(rubro)
 max<-paste("Maximo:",round(max(x),2))
