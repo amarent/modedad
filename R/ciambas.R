@@ -33,7 +33,7 @@ some_txt = gsub("Ã©", "é", some_txt)
 desc<-clean(as.character(mydataD$DESCRIPCION))
 
 l2<-list(desc)
-layout(matrix(c(1,1,2,3),2,2,byrow=T),widths=c(1.8,2.2),heights=c(1,2))
+layout(matrix(c(1,1,2,3),2,2,byrow=T),widths=c(1,3),heights=c(.5,2.5))
 plot(-1:1,-1:1,type="n",xlab="",ylab="",bty="n",xaxt='n',yaxt='n')
 text(x=-1,y=c(-.5),labels=l2,adj=0,cex=2.5)
 plot(-1:1,-1:1,type="n",xlab="",ylab="",bty="n",xaxt='n',yaxt='n')
