@@ -16,7 +16,7 @@ kurtosis=paste("Kurtosis:",round(m4/(sd(x)^4)-3),2)
 
 l<-list(promedio,sd,max,min,asimetria,kurtosis)
 
-h<-hist(x,plot=F)
+h<-hist(x,plot=F,cex=2)
 h$density<-with(h,100*density*diff(breaks)[1])
 labs<-paste(round(h$density),"%",sep="")
 
@@ -48,7 +48,7 @@ plot(-2:2,-2:2,type="n",xlab="",ylab="",bty="n",xaxt='n',yaxt='n')
 text(x=0,y=-1,labels=l2,cex=2.5)
 plot(-1:1,-1:1,type="n",xlab="",ylab="",bty="n",xaxt='n',yaxt='n')
 text(x=-1,y=c(.8,.6,.4,.2,0,2),labels=l,adj=0,cex=2)
-plot(h,freq=F,labels=labs,ylim=c(0,1.08*max(h$density)),xlab=colnames(mydata),ylab="Porcentaje",col="#51C6D9",border="#00517A",main="",cex.lab=1.5,cex.axis=1.3,cex.labels=2)
+plot(h,freq=F,labels=labs,ylim=c(0,1.08*max(h$density)),xlab=colnames(mydata),ylab="Porcentaje",col="#51C6D9",border="#00517A",main="",cex.lab=1.5,cex.axis=1.3)
 
 #par(mfrow=c(2,2))
 #plot(-1:1,-1:1,type="n",xlab="",ylab="",bty="n",xaxt='n',yaxt='n')
