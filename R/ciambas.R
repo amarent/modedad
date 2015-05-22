@@ -48,7 +48,7 @@ plot(-2:2,-2:2,type="n",xlab="",ylab="",bty="n",xaxt='n',yaxt='n')
 text(x=0,y=-1,labels=l2,cex=2.5)
 plot(-1:1,-1:1,type="n",xlab="",ylab="",bty="n",xaxt='n',yaxt='n')
 text(x=-1,y=c(.8,.6,.4,.2,0,2),labels=l,adj=0,cex=2)
-par(cex=1.5)
+par(cex=1.3)
 plot(h,freq=F,labels=labs,ylim=c(0,1.08*max(h$density)),xlab=colnames(mydata),ylab="Porcentaje",col="#51C6D9",border="#00517A",main="")
 
 #par(mfrow=c(2,2))
