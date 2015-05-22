@@ -43,7 +43,7 @@ layout(matrix(c(1,2,2,2,2,2,
 		1,3,3,3,3,3,
 		1,3,3,3,3,3), 6, 8, byrow = FALSE))
 plot(-1:1,-1:1,type="n",xlab="",ylab="",bty="n",xaxt='n',yaxt='n')
-text(x=-1,y=c(-.2),labels=l2,adj=0,cex=2.5)
+text(x=-1,y=c(-.25),labels=l2,adj=0,cex=2.5)
 plot(-1:1,-1:1,type="n",xlab="",ylab="",bty="n",xaxt='n',yaxt='n')
 text(x=-1,y=c(.8,.6,.4,.2,0,2),labels=l,adj=0,cex=2)
 plot(h,freq=F,labels=labs,ylim=c(0,1.08*max(h$density)),xlab=colnames(mydata),ylab="(porcentaje)",col="#51C6D9",border="#00517A",main="")
