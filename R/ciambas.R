@@ -42,7 +42,7 @@ layout(matrix(c(1,2,2,2,2,2,
 		1,3,3,3,3,3,
 		1,3,3,3,3,3,
 		1,3,3,3,3,3), 6, 8, byrow = FALSE))
-par(mar=c(2,0,0,0), oma=c(0,0,0,0))
+par(mar=c(4,0,0,0), oma=c(0,0,0,0))
 plot(-2:2,-2:2,type="n",xlab="",ylab="",bty="n",xaxt='n',yaxt='n')
 #plot(-2:2,-2:2, outer=FALSE)
 text(x=0,y=0,labels=l2,cex=2.5)
