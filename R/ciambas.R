@@ -43,7 +43,7 @@ layout(matrix(c(1,2,2,2,2,2,
 		1,3,3,3,3,3,
 		1,3,3,3,3,3), 6, 8, byrow = FALSE))
 #plot(-2:2,-2:2,type="n",xlab="",ylab="",bty="n",xaxt='n',yaxt='n')
-plot(-2:2,-2:2)
+plot(-2:2,-2:2, outer=FALSE)
 text(x=0,y=0,labels=l2,cex=2.5)
 plot(-1:1,-1:1,type="n",xlab="",ylab="",bty="n",xaxt='n',yaxt='n')
 text(x=-1,y=c(.8,.6,.4,.2,0,2),labels=l,adj=0,cex=2)
